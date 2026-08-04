@@ -759,18 +759,7 @@
 
     <!-- FOOTER SECTION -->
     <footer id="contact" class="w-full overflow-hidden relative my-0">
-        <!-- SVG "D" ELEMENT ON SEPARATION LINE -->
-        <div
-            class="absolute top-1/2 left-[28%] lg:left-[28.5%] -translate-y-1/2 -translate-x-1/2 z-20 pointer-events-none hidden md:flex items-center justify-center">
-            <svg width="48" height="80" viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="drop-shadow-lg">
-                <!-- D-shape semi-circle facing left -->
-                <path d="M48 0C21.4903 0 0 17.9086 0 40C0 62.0914 21.4903 80 48 80V0Z" fill="#0B3B24" />
-                <!-- Lime Green Accent Line -->
-                <path d="M46 4C22.5 4 4 20.1 4 40C4 59.9 22.5 76 46 76" stroke="#8BC34A" stroke-width="3"
-                    stroke-linecap="round" />
-            </svg>
-        </div>
+
 
         <!-- FULL-WIDTH SPLIT LAYOUT -->
         <div class="grid md:grid-cols-[1fr,2.5fr] w-full min-h-[400px]">
@@ -806,6 +795,14 @@
 
             <!-- RIGHT GREEN SIDE -->
             <div class="bg-[#0B3B24] p-10 md:p-14 text-white relative z-10 flex flex-col justify-center">
+                <!-- Seamless Green D-Extension -->
+                <div
+                    class="absolute top-1/2 left-0 -translate-x-full -translate-y-1/2 hidden md:block z-10 pointer-events-none">
+                    <svg width="40" height="80" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Clean solid path using exact brand green (#0B3B24) -->
+                        <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80V0Z" fill="#0B3B24" />
+                    </svg>
+                </div>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 max-w-4xl mx-auto md:mx-0 w-full">
 
                     <!-- QUICK LINKS -->
