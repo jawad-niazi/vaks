@@ -11,7 +11,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
@@ -24,7 +25,8 @@
                         'vaks-dark': '#0B3B24',
                         'vaks-lime': '#8BC34A',
                         'vaks-lime-hover': '#7cb337',
-                        'vaks-bg': '#F4F6F0',
+                        'vaks-bg': '#F9FAF7',
+                        'vaks-soft': '#F4F6F0',
                         'vaks-charcoal': '#1E1E1E',
                         'vaks-muted': '#555555'
                     },
@@ -43,14 +45,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* Custom Utilities & Styles */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(11, 59, 36, 0.05) 0%, rgba(139, 195, 74, 0.08) 100%);
+        .hero-pattern {
+            background-color: #F9FAF7;
+            background-image: radial-gradient(#0B3B24 0.5px, transparent 0.5px), radial-gradient(#0B3B24 0.5px, #F9FAF7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.03;
         }
 
         .badge-pulse {
@@ -65,11 +65,10 @@
             }
 
             50% {
-                box-shadow: 0 0 0 10px rgba(139, 195, 74, 0);
+                box-shadow: 0 0 0 8px rgba(139, 195, 74, 0);
             }
         }
 
-        /* Custom Accordion Transition */
         .accordion-content {
             max-height: 0;
             overflow: hidden;
@@ -83,11 +82,11 @@
     </style>
 </head>
 
-<body class="bg-vaks-bg text-vaks-charcoal font-sans antialiased selection:bg-vaks-lime selection:text-vaks-dark">
+<body class="bg-[#F9FAF7] text-vaks-charcoal font-sans antialiased selection:bg-vaks-lime selection:text-vaks-dark">
 
     <!-- TOP INFO BAR -->
-    <div class="bg-vaks-dark text-white text-xs md:text-sm py-1.5 px-4 border-b border-white/10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5">
+    <div class="bg-vaks-dark text-white text-xs md:text-sm py-2 px-4 border-b border-emerald-900/50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <!-- Left Info -->
             <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 text-gray-200">
                 <span class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
@@ -97,7 +96,7 @@
                 <a href="mailto:vakspak@gmail.com"
                     class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
                     <i class="fa-solid fa-envelope text-vaks-lime"></i>
-                    <span>vakspak@gmail.com</span>
+                    <span>info@vaksglobal.com</span>
                 </a>
             </div>
 
@@ -108,64 +107,57 @@
                     <span><strong class="text-white">UAE:</strong> +971 50 390 8597</span>
                 </a>
                 <span class="text-gray-500 hidden sm:inline">|</span>
-                <a href="tel:+923218988421" class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
+                <a href="tel:+923001234567" class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
                     <i class="fa-solid fa-phone text-vaks-lime"></i>
-                    <span><strong class="text-white">PK:</strong> +92 321 8988421</span>
+                    <span><strong class="text-white">PK:</strong> +92 300 1234567</span>
                 </a>
                 <a href="https://wa.me/923218988421" target="_blank" rel="noopener noreferrer"
-                    class="ml-1.5 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition-colors">
+                    class="ml-1 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition-colors">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp B2B
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- MAIN NAVBAR FLOATING CARD -->
-    <header id="main-header"
-        class="sticky top-2 z-50 max-w-[1400px] w-[94%] mx-auto mt-2 mb-2 bg-white/95 backdrop-blur-md rounded-2xl md:rounded-3xl shadow-lg border border-gray-100 transition-all duration-300">
-        <div class="px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between min-h-[4rem] py-1.5">
+    <!-- MAIN NAVBAR (MATCHING REFERENCE MOCKUP HEADER) -->
+    <header id="main-header" class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between min-h-[5rem] py-2">
 
-                <!-- BRAND LOGO -->
+                <!-- BRAND LOGO WITH SUBTITLE -->
                 <a href="#" class="flex items-center gap-3 group focus:outline-none"
-                    aria-label="VAKS Global Trading Co. Home">
-                    <img src="vaksLogo.png" alt="VAKS Global Trading Co."
-                        class="h-11 md:h-13 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    aria-label="VAKS Global Trading Co.">
+                    <img src="vaksLogo.png" alt="VAKS Global Trading Co." class="h-12 md:h-16 w-auto object-contain">
                 </a>
 
                 <!-- DESKTOP NAVIGATION -->
-                <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-vaks-charcoal">
+                <nav
+                    class="hidden md:flex items-center gap-8 text-xs font-extrabold uppercase tracking-wider text-vaks-charcoal">
                     <a href="#home"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">Home</a>
+                        class="hover:text-vaks-lime text-vaks-dark transition-colors py-1 border-b-2 border-vaks-lime">HOME</a>
                     <a href="#about"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">About
-                        Us</a>
-                    <a href="#products"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">Products</a>
+                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">ABOUT
+                        US</a>
                     <a href="#services"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">Services</a>
-                    <a href="#why-us"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">Why
-                        Choose Us</a>
+                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">SERVICES</a>
+                    <a href="#products"
+                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">PRODUCTS</a>
                     <a href="#markets"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">Markets</a>
-                    <a href="#faqs"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">FAQs</a>
+                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">MARKETS</a>
                     <a href="#contact"
-                        class="nav-link hover:text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">Contact</a>
+                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">CONTACT
+                        US</a>
                 </nav>
 
-                <!-- CTA BUTTON -->
+                <!-- GET A QUOTE CTA BUTTON -->
                 <div class="hidden lg:flex items-center gap-3">
                     <button onclick="openQuoteModal()"
-                        class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-5 py-2.5 rounded-full text-xs tracking-wide shadow-md shadow-vaks-dark/20 hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center gap-2 group">
-                        <span>GET A QUOTE</span>
-                        <i
-                            class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1 transition-transform"></i>
+                        class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-6 py-2.5 rounded-full text-xs tracking-wider uppercase shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                        GET A QUOTE
                     </button>
                 </div>
 
-                <!-- MOBILE HAMBURGER BUTTON -->
+                <!-- MOBILE MENU BUTTON -->
                 <button id="mobile-menu-btn"
                     class="md:hidden p-2 rounded-lg text-vaks-dark hover:bg-gray-100 focus:outline-none"
                     aria-label="Toggle menu">
@@ -175,205 +167,122 @@
         </div>
 
         <!-- MOBILE MENU DRAWER -->
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-white/95 rounded-b-2xl md:rounded-b-3xl border-t border-gray-100 px-4 pt-2 pb-6 shadow-xl transition-all">
-            <div class="flex flex-col gap-3 font-semibold text-gray-700 text-base">
-                <a href="#home"
-                    class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">Home</a>
-                <a href="#about"
-                    class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">About Us</a>
-                <a href="#products"
-                    class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">Products</a>
-                <a href="#services"
-                    class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">Services</a>
-                <a href="#why-us" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">Why
-                    Choose Us</a>
-                <a href="#markets"
-                    class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">Markets</a>
-                <a href="#faqs"
-                    class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">FAQs</a>
-                <a href="#contact"
-                    class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg hover:text-vaks-dark">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-6 shadow-xl">
+            <div class="flex flex-col gap-3 font-bold text-gray-700 text-sm">
+                <a href="#home" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">HOME</a>
+                <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">ABOUT US</a>
+                <a href="#services" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">SERVICES</a>
+                <a href="#products" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">PRODUCTS</a>
+                <a href="#markets" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">MARKETS</a>
+                <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">CONTACT US</a>
                 <button onclick="openQuoteModal()"
-                    class="mt-2 w-full bg-vaks-dark text-white font-bold py-3 rounded-xl text-center flex items-center justify-center gap-2">
-                    <span>GET A QUOTE</span>
-                    <i class="fa-solid fa-arrow-right text-vaks-lime"></i>
+                    class="mt-2 w-full bg-vaks-dark text-white font-bold py-3 rounded-full text-center text-xs tracking-wider">
+                    GET A QUOTE
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (COMPACT ABOVE-THE-FOLD DESIGN) -->
-    <section id="home" class="py-2 md:py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-                class="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-gray-100 overflow-hidden hero-gradient">
-                <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+    <!-- HERO SECTION (MATCHING REFERENCE MOCKUP EXACTLY) -->
+    <section id="home" class="relative overflow-hidden bg-[#F9FAF7] min-h-[500px] lg:min-h-[600px] flex items-center">
+        <!-- FULL COVER BACKGROUND IMAGE (RIGHT SIDE) WITH DIAGONAL FADE -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img src="fruits1.png" alt="VAKS Global Trade and Fresh Produce"
+                class="absolute inset-0 w-full h-full object-cover object-right [mask-image:linear-gradient(115deg,transparent_20%,black_50%)] [-webkit-mask-image:linear-gradient(115deg,transparent_20%,black_50%)]">
+        </div>
 
-                    <!-- HERO CONTENT LEFT -->
-                    <div class="lg:col-span-6 space-y-4 text-center lg:text-left" data-aos="fade-right"
-                        data-aos-duration="1000">
-                        <div
-                            class="inline-flex items-center gap-2 bg-emerald-100/80 border border-emerald-300 text-vaks-dark text-xs font-bold px-3.5 py-1 rounded-full shadow-sm">
-                            <span class="w-2 h-2 rounded-full bg-vaks-lime badge-pulse"></span>
-                            Premier B2B Fresh Produce Exporter
-                        </div>
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
 
-                        <h1
-                            class="text-3xl sm:text-4xl lg:text-5xl font-black text-vaks-dark leading-[1.1] tracking-tight">
-                            GLOBAL TRADE.<br>
-                            <span class="text-emerald-700">FRESH CONNECTIONS.</span>
-                        </h1>
+                <!-- HERO CONTENT LEFT -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left relative z-20" data-aos="fade-right"
+                    data-aos-duration="1000">
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-dark leading-[1.1] tracking-tight relative z-20">
+                        GLOBAL TRADE.<br>
+                        <span class="text-vaks-lime">FRESH CONNECTIONS.</span>
+                    </h1>
 
-                        <p
-                            class="text-sm sm:text-base text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                            We export premium quality fruits and vegetables across the globe with reliability, cold
-                            chain assurance, and uncompromised standards.
-                        </p>
+                    <p
+                        class="text-base sm:text-lg text-gray-800 max-w-lg mx-auto lg:mx-0 leading-relaxed font-semibold relative z-20">
+                        We export premium quality fruits and vegetables across the globe with reliability and care.
+                    </p>
 
-                        <!-- HERO CTAS -->
-                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
-                            <a href="#services"
-                                class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-7 py-3 rounded-full text-sm shadow-lg shadow-vaks-dark/20 hover:shadow-xl hover:-translate-y-0.5 transition-all inline-flex items-center gap-2.5 group">
-                                <span>EXPLORE OUR SERVICES</span>
-                                <i
-                                    class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                            <a href="#products"
-                                class="bg-white hover:bg-gray-50 border-2 border-vaks-dark/20 text-vaks-dark font-bold px-7 py-3 rounded-full text-sm shadow-sm hover:shadow-md transition-all inline-flex items-center gap-2">
-                                <i class="fa-solid fa-boxes-packing text-emerald-600"></i>
-                                <span>View Produce Catalogue</span>
-                            </a>
-                        </div>
-
-                        <!-- QUICK HIGHLIGHT METRICS -->
-                        <div
-                            class="pt-4 grid grid-cols-3 gap-3 border-t border-emerald-900/10 text-center lg:text-left">
-                            <div>
-                                <p class="text-xl sm:text-2xl font-black text-vaks-dark">100%</p>
-                                <p class="text-[11px] text-gray-500 font-semibold">Farm-Fresh Guaranteed</p>
-                            </div>
-                            <div>
-                                <p class="text-xl sm:text-2xl font-black text-vaks-dark">Global</p>
-                                <p class="text-[11px] text-gray-500 font-semibold">Sea & Air Logistics</p>
-                            </div>
-                            <div>
-                                <p class="text-xl sm:text-2xl font-black text-vaks-dark">ISO & GAP</p>
-                                <p class="text-[11px] text-gray-500 font-semibold">Compliant Quality</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HERO VISUAL RIGHT (GREEN OCEAN CARGO CONTAINER VESSEL WITH SEAMLESS EDGE FADE) -->
-                    <div class="lg:col-span-6 relative flex items-center justify-center lg:justify-end"
-                        data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                        <div class="relative w-full overflow-hidden rounded-2xl lg:rounded-3xl">
-                            <!-- High-Res Green Ocean Cargo Ship Image with seamless gradient mask -->
-                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
-                                alt="Green Ocean Produce Cargo Vessel"
-                                class="w-full h-[260px] sm:h-[320px] lg:h-[360px] object-cover [mask-image:linear-gradient(to_left,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_left,black_75%,transparent_100%)]">
-
-                            <!-- Soft Gradient Overlay Fades for Smooth Edge Blending -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent pointer-events-none w-1/3">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent pointer-events-none h-1/5 bottom-0">
-                            </div>
-
-                            <!-- Floating Stat Badge -->
-                            <div
-                                class="absolute top-4 left-4 glass-card p-3 rounded-2xl shadow-xl border border-white/80 flex items-center gap-3 max-w-xs backdrop-blur-md bg-white/90">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-vaks-lime flex items-center justify-center text-vaks-dark text-lg font-bold shadow-md">
-                                    <i class="fa-solid fa-ship"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-                                        Worldwide Reach</p>
-                                    <p class="text-xs font-extrabold text-vaks-dark">50+ Export Destinations
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Decorative Ambient Glow -->
-                        <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-vaks-lime/20 rounded-full blur-3xl -z-10">
-                        </div>
-                        <div class="absolute -top-8 -left-8 w-64 h-64 bg-emerald-800/10 rounded-full blur-3xl -z-10">
-                        </div>
+                    <!-- EXPLORE OUR SERVICES PILL BUTTON -->
+                    <div class="pt-2 flex justify-center lg:justify-start relative z-20">
+                        <a href="#services"
+                            class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all inline-flex items-center gap-3 group relative z-20">
+                            <span>EXPLORE OUR SERVICES</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1.5 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
+
+                <!-- RIGHT SIDE EMPTY (Image is in absolute background) -->
+                <div class="lg:col-span-6 hidden lg:block h-[350px] sm:h-[450px] lg:h-[500px]">
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- MANDATORY USP BANNER GRID -->
-    <section class="py-6 md:py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-3xl p-6 sm:p-10 shadow-2xl text-white bg-[#0B3B24]">
-            <!-- Background Cargo/Produce Overlay Image -->
-            <div class="absolute inset-0 z-0 opacity-25">
-                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
-                    alt="Produce Freight Background" class="w-full h-full object-cover">
-            </div>
-            <!-- Dark Green Gradient Overlay -->
-            <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#0B3B24]/95 via-[#0B3B24]/85 to-[#0B3B24]/95"></div>
-
-            <div class="relative z-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- MANDATORY USP BANNER GRID (DARK GREEN CARD WITH 4 USP COLUMNS) -->
+    <section class="py-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-vaks-dark rounded-2xl p-6 sm:p-8 shadow-xl text-white">
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-emerald-800/60">
 
                 <!-- USP 1 -->
-                <div class="flex items-start gap-4 p-5 rounded-2xl backdrop-blur-md bg-white/10 border border-white/15 shadow-lg transition-all hover:bg-white/20 hover:-translate-y-1"
-                    data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4 first:pl-0" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div
-                        class="w-12 h-12 rounded-xl border border-vaks-lime/60 flex-shrink-0 flex items-center justify-center text-vaks-lime text-xl bg-vaks-dark/80 shadow">
+                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
                         <i class="fa-solid fa-globe"></i>
                     </div>
                     <div>
-                        <h3 class="font-extrabold text-base tracking-wide text-white uppercase">GLOBAL REACH</h3>
-                        <p class="text-xs text-gray-200 mt-1 leading-relaxed">Supplying fresh produce to key
-                            international markets seamlessly.</p>
+                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">GLOBAL REACH</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Supplying fresh produce to key
+                            international markets.</p>
                     </div>
                 </div>
 
                 <!-- USP 2 -->
-                <div class="flex items-start gap-4 p-5 rounded-2xl backdrop-blur-md bg-white/10 border border-white/15 shadow-lg transition-all hover:bg-white/20 hover:-translate-y-1"
-                    data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="200">
                     <div
-                        class="w-12 h-12 rounded-xl border border-vaks-lime/60 flex-shrink-0 flex items-center justify-center text-vaks-lime text-xl bg-vaks-dark/80 shadow">
-                        <i class="fa-solid fa-seedling"></i>
+                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
+                        <i class="fa-solid fa-leaf"></i>
                     </div>
                     <div>
-                        <h3 class="font-extrabold text-base tracking-wide text-white uppercase">PREMIUM QUALITY</h3>
-                        <p class="text-xs text-gray-200 mt-1 leading-relaxed">Carefully sourced and inspected to meet
-                            global food safety standards.</p>
+                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">PREMIUM QUALITY</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Carefully sourced and inspected to meet
+                            global standards.</p>
                     </div>
                 </div>
 
                 <!-- USP 3 -->
-                <div class="flex items-start gap-4 p-5 rounded-2xl backdrop-blur-md bg-white/10 border border-white/15 shadow-lg transition-all hover:bg-white/20 hover:-translate-y-1"
-                    data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="300">
                     <div
-                        class="w-12 h-12 rounded-xl border border-vaks-lime/60 flex-shrink-0 flex items-center justify-center text-vaks-lime text-xl bg-vaks-dark/80 shadow">
+                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <div>
-                        <h3 class="font-extrabold text-base tracking-wide text-white uppercase">RELIABLE & SAFE</h3>
-                        <p class="text-xs text-gray-200 mt-1 leading-relaxed">Hygienic handling, secure export packaging
-                            & on-time delivery.</p>
+                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">RELIABLE & SAFE</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Hygienic handling, secure packaging &
+                            on-time delivery.</p>
                     </div>
                 </div>
 
                 <!-- USP 4 -->
-                <div class="flex items-start gap-4 p-5 rounded-2xl backdrop-blur-md bg-white/10 border border-white/15 shadow-lg transition-all hover:bg-white/20 hover:-translate-y-1"
-                    data-aos="fade-up" data-aos-delay="400">
+                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="400">
                     <div
-                        class="w-12 h-12 rounded-xl border border-vaks-lime/60 flex-shrink-0 flex items-center justify-center text-vaks-lime text-xl bg-vaks-dark/80 shadow">
-                        <i class="fa-solid fa-handshake-angle"></i>
+                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
+                        <i class="fa-solid fa-handshake"></i>
                     </div>
                     <div>
-                        <h3 class="font-extrabold text-base tracking-wide text-white uppercase">SUSTAINABLE TRADE</h3>
-                        <p class="text-xs text-gray-200 mt-1 leading-relaxed">Supporting sustainable farming and
-                            long-term B2B partnerships.</p>
+                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">SUSTAINABLE TRADE</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Supporting sustainable farming and
+                            long-term partnerships.</p>
                     </div>
                 </div>
 
@@ -381,915 +290,577 @@
         </div>
     </section>
 
-    <!-- ABOUT US SECTION -->
-    <section id="about" class="py-6 md:py-10">
+    <!-- ABOUT US SECTION (MATCHING REFERENCE MOCKUP LAYOUT) -->
+    <section id="about" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-xl border border-gray-100 overflow-hidden">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
 
-                    <!-- Left Text Content -->
-                    <div class="lg:col-span-6 space-y-6" data-aos="fade-right">
-                        <div class="inline-block">
-                            <span
-                                class="text-xs font-black tracking-widest text-vaks-lime uppercase bg-emerald-100 px-3 py-1 rounded-md">ABOUT
-                                US</span>
-                        </div>
-
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark leading-tight">
-                            Your Trusted Partner in Global Produce Trade
+                <!-- Left Text Content -->
+                <div class="lg:col-span-6 space-y-5" data-aos="fade-right">
+                    <div>
+                        <span class="text-xs font-black tracking-widest text-vaks-lime uppercase">ABOUT US</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark mt-1 leading-tight">
+                            Your Trusted Partner<br>in Global Produce Trade
                         </h2>
-
-                        <p class="text-base text-gray-600 leading-relaxed">
-                            <strong>VAKS Global Trading Co. (VGTC)</strong> is a dynamic Pakistani trading company
-                            engaged
-                            in sourcing, exporting, and supplying the finest quality fruits and vegetables worldwide.
-                            Our
-                            mission is to deliver freshness, quality, and value through ethical business practices and
-                            strong international partnerships.
-                        </p>
-
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            Operating from our primary hub in Karachi (Land Mark Plaza & New Sabzi Mandi), we manage
-                            complete supply chain logistics—from direct farm harvesting to grading, cold storage, and
-                            export
-                            shipment.
-                        </p>
-
-                        <!-- Target Markets Badges / Grid -->
-                        <div class="pt-2">
-                            <h4 class="text-sm font-bold text-vaks-dark uppercase tracking-wider mb-3">Key Global
-                                Markets We
-                                Export To:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-vaks-bg text-vaks-dark text-xs font-bold border border-gray-200 shadow-sm">
-                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> Dubai (UAE)
-                                </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-vaks-bg text-vaks-dark text-xs font-bold border border-gray-200 shadow-sm">
-                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> Qatar
-                                </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-vaks-bg text-vaks-dark text-xs font-bold border border-gray-200 shadow-sm">
-                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> Muscat (Oman)
-                                </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-vaks-bg text-vaks-dark text-xs font-bold border border-gray-200 shadow-sm">
-                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> Sri Lanka
-                                </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-vaks-bg text-vaks-dark text-xs font-bold border border-gray-200 shadow-sm">
-                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> Malaysia
-                                </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-vaks-bg text-vaks-dark text-xs font-bold border border-gray-200 shadow-sm">
-                                    <i class="fa-solid fa-location-dot text-emerald-600"></i> Singapore
-                                </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-vaks-bg text-vaks-dark text-xs font-bold border border-gray-200 shadow-sm">
-                                    <i class="fa-solid fa-globe text-emerald-600"></i> Europe Ports
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="pt-4">
-                            <button onclick="openQuoteModal()"
-                                class="border-2 border-vaks-dark text-vaks-dark hover:bg-vaks-dark hover:text-white font-bold px-7 py-3 rounded-full text-sm transition-all inline-flex items-center gap-2 group">
-                                <span>READ MORE ABOUT US</span>
-                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </button>
-                        </div>
                     </div>
 
-                    <!-- Right Collage Visuals -->
-                    <div class="lg:col-span-6" data-aos="fade-left">
-                        <div class="grid grid-cols-12 gap-4">
-                            <!-- Main Farm Image -->
-                            <div class="col-span-7 rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100">
-                                <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=800&q=80"
-                                    alt="Fresh Farm Produce Sourcing"
-                                    class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <!-- Stacked Freight & Truck Images -->
-                            <div class="col-span-5 flex flex-col gap-4">
-                                <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100 h-36">
-                                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80"
-                                        alt="Air Cargo Produce Export"
-                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-                                </div>
-                                <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100 h-40">
-                                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80"
-                                        alt="Refrigerated Truck Logistics"
-                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                        VAKS Global Trading Co. is a dynamic trading company engaged in sourcing, exporting, and
+                        supplying the finest quality fruits and vegetables worldwide. Our mission is to deliver
+                        freshness, quality, and value through ethical business practices and strong partnerships.
+                    </p>
 
+                    <div class="pt-2">
+                        <a href="#contact"
+                            class="border-2 border-vaks-dark text-vaks-dark hover:bg-vaks-dark hover:text-white font-bold px-7 py-3 rounded-full text-xs tracking-wider uppercase transition-all inline-flex items-center gap-2 group">
+                            <span>READ MORE ABOUT US</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Right Collage Visuals (Farm Produce Box + Air Cargo + Highway Truck) -->
+                <div class="lg:col-span-6" data-aos="fade-left">
+                    <div class="grid grid-cols-12 gap-4">
+                        <!-- Main Farm Produce Box Image -->
+                        <div class="col-span-7 rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100">
+                            <img src="fruits.png" alt="Fresh Farm Produce Harvest Box"
+                                class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <!-- Stacked Cargo Freight Images -->
+                        <div class="col-span-5 flex flex-col gap-4">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100 h-36">
+                                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80"
+                                    alt="Air Freight Produce Cargo"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100 h-40">
+                                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80"
+                                    alt="Refrigerated Truck Freight Logistics"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- PRODUCTS SECTION (4 DISTINCT B2B CARDS) -->
-    <section id="products" class="py-6 md:py-10">
+    <!-- PRODUCTS SECTION (4 DISTINCT PRODUCE CARDS) -->
+    <section id="products" class="py-16 bg-[#F9FAF7]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-xl border border-gray-100 overflow-hidden">
 
-                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                    <span
-                        class="text-xs font-black tracking-widest text-vaks-lime uppercase bg-emerald-100 px-3 py-1 rounded-md">OUR
-                        PRODUCE</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark mt-3">Export Quality Fresh Produce
-                    </h2>
-                    <p class="text-gray-600 mt-2 text-base">Carefully harvested, graded, and packed for global B2B
-                        buyers
-                        and importers.</p>
-                </div>
-
-                <!-- PRODUCT CARDS GRID -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                    <!-- PRODUCT 1: POTATO -->
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <div class="relative overflow-hidden h-52">
-                            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80"
-                                alt="Export Quality Potato"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-vaks-dark text-vaks-lime text-xs font-bold px-3 py-1 rounded-full shadow">
-                                Origin: Pakistan
-                            </span>
-                            <span
-                                class="absolute top-4 right-4 bg-white/90 text-vaks-dark text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase shadow">
-                                Vegetable
-                            </span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-vaks-dark">Potato (Export Quality)</h3>
-                                <p class="text-xs text-gray-500 mt-1 font-medium">Mozika, Asterix & Lady Rosetta
-                                    varieties.
-                                </p>
-                                <ul class="mt-3 space-y-1.5 text-xs text-gray-600 border-t border-gray-100 pt-3">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Sizes:</strong> 80g - 150g+
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Packing:</strong> 5kg - 50kg Mesh Bags
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Moq:</strong> 1 x 40ft Reefer Container
-                                    </li>
-                                </ul>
-                            </div>
-                            <button onclick="inquireProduct('Potato (Export Quality)')"
-                                class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> INQUIRE NOW
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PRODUCT 2: ONION -->
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <div class="relative overflow-hidden h-52">
-                            <img src="https://images.unsplash.com/photo-1618512496248-a07fe83aa8cf?auto=format&fit=crop&w=600&q=80"
-                                alt="Fresh Red & Yellow Onions"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-vaks-dark text-vaks-lime text-xs font-bold px-3 py-1 rounded-full shadow">
-                                Origin: Pakistan
-                            </span>
-                            <span
-                                class="absolute top-4 right-4 bg-white/90 text-vaks-dark text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase shadow">
-                                Vegetable
-                            </span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-vaks-dark">Onion (Red & Yellow)</h3>
-                                <p class="text-xs text-gray-500 mt-1 font-medium">Sindh & Balochistan fresh harvest
-                                    onions.
-                                </p>
-                                <ul class="mt-3 space-y-1.5 text-xs text-gray-600 border-t border-gray-100 pt-3">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Sizes:</strong> 45mm - 70mm+
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Packing:</strong> 10kg, 20kg, 25kg Mesh Bags
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Moq:</strong> 1 x 40ft Reefer Container
-                                    </li>
-                                </ul>
-                            </div>
-                            <button onclick="inquireProduct('Onion (Red & Yellow)')"
-                                class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> INQUIRE NOW
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PRODUCT 3: MANGO -->
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group"
-                        data-aos="fade-up" data-aos-delay="300">
-                        <div class="relative overflow-hidden h-52">
-                            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80"
-                                alt="Chaunsa & Sindhri Mangoes"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-vaks-dark text-vaks-lime text-xs font-bold px-3 py-1 rounded-full shadow">
-                                Origin: Pakistan
-                            </span>
-                            <span
-                                class="absolute top-4 right-4 bg-white/90 text-vaks-dark text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase shadow">
-                                Fruit
-                            </span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-vaks-dark">Mango (Chaunsa / Sindhri)</h3>
-                                <p class="text-xs text-gray-500 mt-1 font-medium">World famous rich aroma & sweet pulp
-                                    mangoes.</p>
-                                <ul class="mt-3 space-y-1.5 text-xs text-gray-600 border-t border-gray-100 pt-3">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Treatment:</strong> Hot Water Treated (HWT)
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Packing:</strong> 2kg, 4kg, 5kg Corrugated Box
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Shipping:</strong> Air & Reefer Sea Freight
-                                    </li>
-                                </ul>
-                            </div>
-                            <button onclick="inquireProduct('Mango (Chaunsa / Sindhri)')"
-                                class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> INQUIRE NOW
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PRODUCT 4: KINNOW -->
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group"
-                        data-aos="fade-up" data-aos-delay="400">
-                        <div class="relative overflow-hidden h-52">
-                            <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=600&q=80"
-                                alt="Fresh Kinnow Mandarins"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-vaks-dark text-vaks-lime text-xs font-bold px-3 py-1 rounded-full shadow">
-                                Origin: Pakistan
-                            </span>
-                            <span
-                                class="absolute top-4 right-4 bg-white/90 text-vaks-dark text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase shadow">
-                                Fruit
-                            </span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-vaks-dark">Kinnow (Fresh Mandarins)</h3>
-                                <p class="text-xs text-gray-500 mt-1 font-medium">Juicy citrus mandarins from Sargodha
-                                    orchards.</p>
-                                <ul class="mt-3 space-y-1.5 text-xs text-gray-600 border-t border-gray-100 pt-3">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Counts:</strong> 42, 48, 54, 60, 72, 80, 90
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Packing:</strong> 10kg Wooden / Export Carton
-                                    </li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-vaks-lime"></i>
-                                        <strong>Moq:</strong> 1 x 40ft Reefer Container
-                                    </li>
-                                </ul>
-                            </div>
-                            <button onclick="inquireProduct('Kinnow (Fresh Mandarins)')"
-                                class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> INQUIRE NOW
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <span class="text-xs font-black tracking-widest text-vaks-lime uppercase">OUR PRODUCE</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark mt-1">Export Quality Fresh Produce</h2>
+                <p class="text-gray-600 mt-2 text-sm">Carefully harvested, graded, and packed for global B2B buyers and
+                    importers.</p>
             </div>
-    </section>
 
-    <!-- SERVICES SECTION (6 CARDS GRID MATCHING MOCKUP) -->
-    <section id="services" class="py-6 md:py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-xl border border-gray-100 overflow-hidden">
+            <!-- PRODUCT CARDS GRID -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                    <span
-                        class="text-xs font-black tracking-widest text-vaks-lime uppercase bg-emerald-100 px-3 py-1 rounded-md">OUR
-                        SERVICES</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark mt-3">End-to-End Produce Trade
-                        Solutions
-                    </h2>
-                    <p class="text-gray-600 mt-2 text-base">Comprehensive B2B export services ensuring farm freshness
-                        right
-                        to your port.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- SERVICE 1 -->
-                    <div class="bg-vaks-bg rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 text-center flex flex-col items-center group"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white text-emerald-600 flex items-center justify-center text-3xl shadow-md group-hover:bg-vaks-dark group-hover:text-vaks-lime transition-all duration-300 mb-6">
-                            <i class="fa-solid fa-apple-whole"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-vaks-dark mb-2">SOURCING</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-xs">Carefully sourcing the freshest
-                            produce
-                            directly from audited, trusted farms.</p>
-                    </div>
-
-                    <!-- SERVICE 2 -->
-                    <div class="bg-vaks-bg rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 text-center flex flex-col items-center group"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white text-emerald-600 flex items-center justify-center text-3xl shadow-md group-hover:bg-vaks-dark group-hover:text-vaks-lime transition-all duration-300 mb-6">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-vaks-dark mb-2">QUALITY CONTROL</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-xs">Strict quality checks, sizing, and
-                            sorting
-                            to ensure international standards.</p>
-                    </div>
-
-                    <!-- SERVICE 3 -->
-                    <div class="bg-vaks-bg rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 text-center flex flex-col items-center group"
-                        data-aos="fade-up" data-aos-delay="300">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white text-emerald-600 flex items-center justify-center text-3xl shadow-md group-hover:bg-vaks-dark group-hover:text-vaks-lime transition-all duration-300 mb-6">
-                            <i class="fa-solid fa-box-open"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-vaks-dark mb-2">PACKAGING</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-xs">Export-ready customized packaging to
-                            preserve optimal freshness and shelf life.</p>
-                    </div>
-
-                    <!-- SERVICE 4 -->
-                    <div class="bg-vaks-bg rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 text-center flex flex-col items-center group"
-                        data-aos="fade-up" data-aos-delay="400">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white text-emerald-600 flex items-center justify-center text-3xl shadow-md group-hover:bg-vaks-dark group-hover:text-vaks-lime transition-all duration-300 mb-6">
-                            <i class="fa-solid fa-truck-ramp-box"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-vaks-dark mb-2">LOGISTICS</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-xs">Efficient temperature-controlled cold
-                            chain logistics and container loading.</p>
-                    </div>
-
-                    <!-- SERVICE 5 -->
-                    <div class="bg-vaks-bg rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 text-center flex flex-col items-center group"
-                        data-aos="fade-up" data-aos-delay="500">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white text-emerald-600 flex items-center justify-center text-3xl shadow-md group-hover:bg-vaks-dark group-hover:text-vaks-lime transition-all duration-300 mb-6">
-                            <i class="fa-solid fa-ship"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-vaks-dark mb-2">EXPORTING</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-xs">Timely phytosanitary clearance and
-                            secure
-                            delivery to global destinations.</p>
-                    </div>
-
-                    <!-- SERVICE 6 -->
-                    <div class="bg-vaks-bg rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 text-center flex flex-col items-center group"
-                        data-aos="fade-up" data-aos-delay="600">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white text-emerald-600 flex items-center justify-center text-3xl shadow-md group-hover:bg-vaks-dark group-hover:text-vaks-lime transition-all duration-300 mb-6">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-vaks-dark mb-2">CUSTOMER SUPPORT</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-xs">Dedicated B2B account support for our
-                            international buyers and partners.</p>
-                    </div>
-
-                </div>
-            </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section id="why-us" class="py-6 md:py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-xl border border-gray-100 overflow-hidden">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-
-                    <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
+                <!-- PRODUCT 1: POTATO -->
+                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative w-full h-52 sm:h-56 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80"
+                            alt="Export Quality Potato"
+                            class="w-full h-52 sm:h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300">
                         <span
-                            class="text-xs font-black tracking-widest text-vaks-lime uppercase bg-emerald-100 px-3 py-1 rounded-md">WHY
-                            CHOOSE US</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark leading-tight">
-                            Built For Reliable Global Partnerships
-                        </h2>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            At VAKS Global Trading Co., we eliminate export friction through rigorous quality standards,
-                            reliable shipping schedules, and transparent communication.
-                        </p>
-
-                        <div class="space-y-4 pt-2">
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-vaks-dark text-vaks-lime flex items-center justify-center text-lg font-bold flex-shrink-0">
-                                    <i class="fa-solid fa-wheat-awn"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-vaks-dark text-base">Farm-Direct Sourcing</h4>
-                                    <p class="text-xs text-gray-600">Direct contracts with growers across Punjab and
-                                        Sindh
-                                        ensure competitive pricing and fresh produce.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-vaks-dark text-vaks-lime flex items-center justify-center text-lg font-bold flex-shrink-0">
-                                    <i class="fa-solid fa-snowflake"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-vaks-dark text-base">Cold Chain Assurance</h4>
-                                    <p class="text-xs text-gray-600">Refrigerated trucks and reefer sea containers
-                                        preserve
-                                        freshness from field to destination port.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-vaks-dark text-vaks-lime flex items-center justify-center text-lg font-bold flex-shrink-0">
-                                    <i class="fa-solid fa-file-contract"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-vaks-dark text-base">Global Compliance</h4>
-                                    <p class="text-xs text-gray-600">Full phytosanitary certification, origin
-                                        certificates,
-                                        and custom clearance documents provided.</p>
-                                </div>
-                            </div>
-                        </div>
+                            class="absolute top-3 left-3 z-10 bg-vaks-dark text-vaks-lime text-[11px] font-bold px-3 py-1 rounded-full shadow">
+                            Origin: Pakistan
+                        </span>
                     </div>
-
-                    <div class="lg:col-span-7" data-aos="fade-left">
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="bg-vaks-bg p-6 rounded-3xl shadow-sm border border-gray-100 space-y-3">
-                                <i class="fa-solid fa-scale-balanced text-3xl text-emerald-600"></i>
-                                <h4 class="font-bold text-lg text-vaks-dark">Competitive Wholesale Pricing</h4>
-                                <p class="text-xs text-gray-600 leading-relaxed">Direct farm ownership & market yard
-                                    presence enables unbeatable FOB & CIF price quotes for importers.</p>
-                            </div>
-
-                            <div class="bg-vaks-bg p-6 rounded-3xl shadow-sm border border-gray-100 space-y-3">
-                                <i class="fa-solid fa-clock-rotate-left text-3xl text-emerald-600"></i>
-                                <h4 class="font-bold text-lg text-vaks-dark">On-Time Shipping Guarantee</h4>
-                                <p class="text-xs text-gray-600 leading-relaxed">Dedicated logistics desk manages
-                                    booking
-                                    with top container carriers for prompt vessel departure.</p>
-                            </div>
-
-                            <div class="bg-vaks-bg p-6 rounded-3xl shadow-sm border border-gray-100 space-y-3">
-                                <i class="fa-solid fa-boxes-stacked text-3xl text-emerald-600"></i>
-                                <h4 class="font-bold text-lg text-vaks-dark">Custom Packaging & Branding</h4>
-                                <p class="text-xs text-gray-600 leading-relaxed">Private labeling, customized carton
-                                    sizing,
-                                    and mesh/jute bag weights based on buyer specs.</p>
-                            </div>
-
-                            <div class="bg-vaks-bg p-6 rounded-3xl shadow-sm border border-gray-100 space-y-3">
-                                <i class="fa-solid fa-hand-holding-heart text-3xl text-emerald-600"></i>
-                                <h4 class="font-bold text-lg text-vaks-dark">Long-Term B2B Trust</h4>
-                                <p class="text-xs text-gray-600 leading-relaxed">Transparent grading reports and
-                                    pre-shipment photos sent to buyers before container sealing.</p>
-                            </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-vaks-dark">Potato (Mozika / Asterix)</h3>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">Mozika, Asterix & Lady Rosetta export
+                                varieties.</p>
+                            <ul class="mt-3 space-y-1 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li><strong>Sizes:</strong> 80g - 150g+</li>
+                                <li><strong>Packing:</strong> 5kg - 50kg Mesh Bags</li>
+                            </ul>
                         </div>
+                        <button onclick="inquireProduct('Potato (Mozika / Asterix)')"
+                            class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-vaks-lime"></i> INQUIRE NOW
+                        </button>
                     </div>
-
                 </div>
+
+                <!-- PRODUCT 2: ONION -->
+                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative w-full h-52 sm:h-56 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1618512496248-a07fe83aa8cf?auto=format&fit=crop&w=800&q=80"
+                            alt="Fresh Red & Yellow Onions"
+                            class="w-full h-52 sm:h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                        <span
+                            class="absolute top-3 left-3 z-10 bg-vaks-dark text-vaks-lime text-[11px] font-bold px-3 py-1 rounded-full shadow">
+                            Origin: Pakistan
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-vaks-dark">Onion (Red & Yellow)</h3>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">Sindh & Balochistan fresh harvest onions.
+                            </p>
+                            <ul class="mt-3 space-y-1 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li><strong>Sizes:</strong> 45mm - 70mm+</li>
+                                <li><strong>Packing:</strong> 10kg, 20kg Mesh Bags</li>
+                            </ul>
+                        </div>
+                        <button onclick="inquireProduct('Onion (Red & Yellow)')"
+                            class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-vaks-lime"></i> INQUIRE NOW
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 3: MANGO -->
+                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative w-full h-52 sm:h-56 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=800&q=80"
+                            alt="Chaunsa & Sindhri Mangoes"
+                            class="w-full h-52 sm:h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                        <span
+                            class="absolute top-3 left-3 z-10 bg-vaks-dark text-vaks-lime text-[11px] font-bold px-3 py-1 rounded-full shadow">
+                            Origin: Pakistan
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-vaks-dark">Mango (Chaunsa / Sindhri)</h3>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">World famous rich aroma & sweet pulp
+                                mangoes.</p>
+                            <ul class="mt-3 space-y-1 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li><strong>Treatment:</strong> Hot Water Treated (HWT)</li>
+                                <li><strong>Packing:</strong> 2kg, 4kg Export Cartons</li>
+                            </ul>
+                        </div>
+                        <button onclick="inquireProduct('Mango (Chaunsa / Sindhri)')"
+                            class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-vaks-lime"></i> INQUIRE NOW
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 4: KINNOW -->
+                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative w-full h-52 sm:h-56 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=800&q=80"
+                            alt="Fresh Kinnow Mandarins"
+                            class="w-full h-52 sm:h-56 object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                        <span
+                            class="absolute top-3 left-3 z-10 bg-vaks-dark text-vaks-lime text-[11px] font-bold px-3 py-1 rounded-full shadow">
+                            Origin: Pakistan
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-vaks-dark">Kinnow (Fresh Mandarins)</h3>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">Juicy citrus mandarins from Sargodha
+                                orchards.</p>
+                            <ul class="mt-3 space-y-1 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                                <li><strong>Counts:</strong> 42, 48, 54, 60, 72, 80</li>
+                                <li><strong>Packing:</strong> 10kg Wooden / Export Box</li>
+                            </ul>
+                        </div>
+                        <button onclick="inquireProduct('Kinnow (Fresh Mandarins)')"
+                            class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs tracking-wider transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-vaks-lime"></i> INQUIRE NOW
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- FUN FACTS (ANIMATED COUNTER BANNER) -->
-    <section class="py-6 md:py-10">
+    <!-- OUR SERVICES SECTION (6 CARDS GRID MATCHING REFERENCE MOCKUP) -->
+    <section id="services" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-[#0B3B24] text-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden relative">
-                <!-- Background Logistics/Produce Overlay Image -->
-                <div class="absolute inset-0 z-0 opacity-25">
-                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80"
-                        alt="Global Logistics Background" class="w-full h-full object-cover">
-                </div>
-                <!-- Dark Green Gradient Overlay -->
-                <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#0B3B24]/95 via-[#0B3B24]/85 to-[#0B3B24]/95">
-                </div>
 
-                <div
-                    class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-emerald-700/50">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-black tracking-widest text-vaks-lime uppercase">OUR SERVICES</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark mt-1">End-to-End Produce Trade Solutions
+                </h2>
+            </div>
 
-                    <!-- Stat 1 -->
-                    <div class="space-y-2 p-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div
-                            class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight drop-shadow-md">
-                            <span class="stat-counter" data-target="15">0</span>+
-                        </div>
-                        <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-200">Years of
-                            Experience
-                        </p>
+            <!-- 6 SERVICES GRID -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+
+                <!-- SERVICE 1: SOURCING -->
+                <div class="bg-[#F9FAF7] rounded-2xl p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-vaks-lime flex items-center justify-center text-2xl shadow mb-4 group-hover:bg-vaks-dark transition-all">
+                        <i class="fa-solid fa-apple-whole"></i>
                     </div>
-
-                    <!-- Stat 2 -->
-                    <div class="space-y-2 p-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div
-                            class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight drop-shadow-md">
-                            <span class="stat-counter" data-target="50">0</span>+
-                        </div>
-                        <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-200">Countries Served
-                        </p>
-                    </div>
-
-                    <!-- Stat 3 -->
-                    <div class="space-y-2 p-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div
-                            class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight drop-shadow-md">
-                            <span class="stat-counter" data-target="1000">0</span>+
-                        </div>
-                        <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-200">Successful
-                            Shipments
-                        </p>
-                    </div>
-
-                    <!-- Stat 4 -->
-                    <div class="space-y-2 p-4" data-aos="zoom-in" data-aos-delay="400">
-                        <div
-                            class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight drop-shadow-md">
-                            <span class="stat-counter" data-target="500">0</span>+
-                        </div>
-                        <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-200">Happy B2B Clients
-                        </p>
-                    </div>
-
+                    <h3 class="text-xs font-extrabold tracking-wider text-vaks-dark uppercase mb-2">SOURCING</h3>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">Carefully sourcing the freshest produce from
+                        trusted farms.</p>
                 </div>
 
-                <!-- Decorative Ambient Glow -->
-                <div
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-vaks-lime/10 blur-3xl pointer-events-none z-0">
+                <!-- SERVICE 2: QUALITY CONTROL -->
+                <div class="bg-[#F9FAF7] rounded-2xl p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-vaks-lime flex items-center justify-center text-2xl shadow mb-4 group-hover:bg-vaks-dark transition-all">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-xs font-extrabold tracking-wider text-vaks-dark uppercase mb-2">QUALITY CONTROL</h3>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">Strict quality checks to ensure international
+                        standards.</p>
                 </div>
+
+                <!-- SERVICE 3: PACKAGING -->
+                <div class="bg-[#F9FAF7] rounded-2xl p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-vaks-lime flex items-center justify-center text-2xl shadow mb-4 group-hover:bg-vaks-dark transition-all">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="text-xs font-extrabold tracking-wider text-vaks-dark uppercase mb-2">PACKAGING</h3>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">Export-ready packaging to preserve freshness
+                        and quality.</p>
+                </div>
+
+                <!-- SERVICE 4: LOGISTICS -->
+                <div class="bg-[#F9FAF7] rounded-2xl p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-vaks-lime flex items-center justify-center text-2xl shadow mb-4 group-hover:bg-vaks-dark transition-all">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xs font-extrabold tracking-wider text-vaks-dark uppercase mb-2">LOGISTICS</h3>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">Efficient logistics and cold chain management.
+                    </p>
+                </div>
+
+                <!-- SERVICE 5: EXPORTING -->
+                <div class="bg-[#F9FAF7] rounded-2xl p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-vaks-lime flex items-center justify-center text-2xl shadow mb-4 group-hover:bg-vaks-dark transition-all">
+                        <i class="fa-solid fa-ship"></i>
+                    </div>
+                    <h3 class="text-xs font-extrabold tracking-wider text-vaks-dark uppercase mb-2">EXPORTING</h3>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">Timely and secure delivery to global markets.
+                    </p>
+                </div>
+
+                <!-- SERVICE 6: CUSTOMER SUPPORT -->
+                <div class="bg-[#F9FAF7] rounded-2xl p-6 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group"
+                    data-aos="fade-up" data-aos-delay="600">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-vaks-lime flex items-center justify-center text-2xl shadow mb-4 group-hover:bg-vaks-dark transition-all">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xs font-extrabold tracking-wider text-vaks-dark uppercase mb-2">CUSTOMER SUPPORT
+                    </h3>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">Dedicated support for our global partners.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS COUNTER BANNER (MATCHING REFERENCE MOCKUP) -->
+    <section class="py-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden bg-vaks-dark text-white rounded-2xl p-8 sm:p-12 shadow-xl">
+            <!-- Ambient Produce Overlay Image -->
+            <div class="absolute inset-0 opacity-20 bg-cover bg-center"
+                style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80');">
+            </div>
+
+            <div
+                class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-emerald-800/60">
+
+                <!-- Stat 1 -->
+                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
+                        <span class="stat-counter" data-target="15">0</span>+
+                    </div>
+                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Years of Experience</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
+                        <span class="stat-counter" data-target="50">0</span>+
+                    </div>
+                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Countries Served</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
+                        <span class="stat-counter" data-target="1000">0</span>+
+                    </div>
+                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Successful Shipments</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
+                        <span class="stat-counter" data-target="500">0</span>+
+                    </div>
+                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Happy Clients</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET MARKETS SECTION -->
+    <section id="markets" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs font-black tracking-widest text-vaks-lime uppercase">GLOBAL REACH</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-vaks-dark mt-1 mb-8">Key Export Destinations</h2>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9FAF7] text-vaks-dark text-xs font-extrabold border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-location-dot text-vaks-lime"></i> Dubai (UAE)
+                </span>
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9FAF7] text-vaks-dark text-xs font-extrabold border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-location-dot text-vaks-lime"></i> Qatar
+                </span>
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9FAF7] text-vaks-dark text-xs font-extrabold border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-location-dot text-vaks-lime"></i> Muscat (Oman)
+                </span>
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9FAF7] text-vaks-dark text-xs font-extrabold border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-location-dot text-vaks-lime"></i> Sri Lanka
+                </span>
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9FAF7] text-vaks-dark text-xs font-extrabold border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-location-dot text-vaks-lime"></i> Malaysia
+                </span>
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9FAF7] text-vaks-dark text-xs font-extrabold border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-location-dot text-vaks-lime"></i> Singapore
+                </span>
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9FAF7] text-vaks-dark text-xs font-extrabold border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-globe text-vaks-lime"></i> European Ports
+                </span>
             </div>
         </div>
     </section>
 
     <!-- FAQS SECTION (INTERACTIVE ACCORDION) -->
-    <section id="faqs" class="py-6 md:py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-xl border border-gray-100 overflow-hidden">
-
-                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                    <span
-                        class="text-xs font-black tracking-widest text-vaks-lime uppercase bg-emerald-100 px-3 py-1 rounded-md">FREQUENTLY
-                        ASKED QUESTIONS</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark mt-3">Got Questions? We Have Answers.
-                    </h2>
-                    <p class="text-gray-600 mt-2 text-sm">Key information regarding our export locations, logistics,
-                        packaging, and order requirements.</p>
-                </div>
-
-                <div class="space-y-4 max-w-4xl mx-auto" id="faq-accordion">
-
-                    <!-- FAQ 1 -->
-                    <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm transition-all"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <button
-                            class="accordion-header w-full text-left p-6 flex justify-between items-center gap-4 bg-vaks-bg hover:bg-emerald-50/50 transition-colors font-bold text-base text-vaks-dark focus:outline-none"
-                            aria-expanded="false">
-                            <span>Q1: What are your main target markets for fresh produce export?</span>
-                            <i
-                                class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content bg-white px-6 py-0">
-                            <p class="text-sm text-gray-600 leading-relaxed py-5 border-t border-gray-100">
-                                We regularly export high-grade Pakistani fresh fruits and vegetables to <strong>Dubai
-                                    (UAE),
-                                    Qatar, Muscat (Oman), Sri Lanka, Malaysia, Singapore, and European ports</strong>.
-                                We
-                                can also arrange shipments to any international port with cold chain logistics
-                                connectivity.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm transition-all"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <button
-                            class="accordion-header w-full text-left p-6 flex justify-between items-center gap-4 bg-vaks-bg hover:bg-emerald-50/50 transition-colors font-bold text-base text-vaks-dark focus:outline-none"
-                            aria-expanded="false">
-                            <span>Q2: Where is your Head Office and primary warehouse located?</span>
-                            <i
-                                class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content bg-white px-6 py-0">
-                            <p class="text-sm text-gray-600 leading-relaxed py-5 border-t border-gray-100">
-                                Our Head Office is situated at <strong>Suite # 10th Floor, Land Mark Plaza, Opp. Jang
-                                    Press,
-                                    I.I. Chundrigar Road, Karachi – 74200</strong>. Our sorting, grading, and yard
-                                warehouse
-                                is located at <strong>Shop # 123, Onion & Potato Shed, New Sabzi Mandi,
-                                    Karachi</strong>.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm transition-all"
-                        data-aos="fade-up" data-aos-delay="300">
-                        <button
-                            class="accordion-header w-full text-left p-6 flex justify-between items-center gap-4 bg-vaks-bg hover:bg-emerald-50/50 transition-colors font-bold text-base text-vaks-dark focus:outline-none"
-                            aria-expanded="false">
-                            <span>Q3: Do you ship to European and Asian ports with phytosanitary compliance?</span>
-                            <i
-                                class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content bg-white px-6 py-0">
-                            <p class="text-sm text-gray-600 leading-relaxed py-5 border-t border-gray-100">
-                                Yes! All our shipments comply with destination country plant quarantine regulations. We
-                                issue official Phytosanitary Certificates, Certificate of Origin, Form E, and Bill of
-                                Lading
-                                for all European and Asian shipments.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm transition-all"
-                        data-aos="fade-up" data-aos-delay="400">
-                        <button
-                            class="accordion-header w-full text-left p-6 flex justify-between items-center gap-4 bg-vaks-bg hover:bg-emerald-50/50 transition-colors font-bold text-base text-vaks-dark focus:outline-none"
-                            aria-expanded="false">
-                            <span>Q4: How do you maintain the cold chain for delicate Mangoes and Kinnow
-                                mandarins?</span>
-                            <i
-                                class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content bg-white px-6 py-0">
-                            <p class="text-sm text-gray-600 leading-relaxed py-5 border-t border-gray-100">
-                                We utilize temperature-controlled pre-cooling facilities immediately after harvest. For
-                                Mangoes, Hot Water Treatment (HWT) or Vapour Heat Treatment (VHT) is applied when
-                                required.
-                                Shipments travel in pre-cooled 40ft High Cube Reefer containers at optimized temperature
-                                and
-                                humidity settings (e.g., +13°C for Mangoes, +4°C to +6°C for Kinnow).
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm transition-all"
-                        data-aos="fade-up" data-aos-delay="500">
-                        <button
-                            class="accordion-header w-full text-left p-6 flex justify-between items-center gap-4 bg-vaks-bg hover:bg-emerald-50/50 transition-colors font-bold text-base text-vaks-dark focus:outline-none"
-                            aria-expanded="false">
-                            <span>Q5: What are your standard packaging options and Minimum Order Quantity (MOQ)?</span>
-                            <i
-                                class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content bg-white px-6 py-0">
-                            <p class="text-sm text-gray-600 leading-relaxed py-5 border-t border-gray-100">
-                                Our standard sea freight MOQ is <strong>1 x 40ft Reefer Container</strong> (approx.
-                                24-28
-                                Metric Tons depending on produce). For high-value fresh mangoes, air freight shipments
-                                start
-                                from 1 to 5 Tons. Packaging options include 5kg/10kg mesh bags, corrugated export
-                                cartons,
-                                telescopic boxes, or custom private label branding.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+    <section id="faqs" class="py-16 bg-[#F9FAF7]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="text-xs font-black tracking-widest text-vaks-lime uppercase">FREQUENTLY ASKED
+                    QUESTIONS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-vaks-dark mt-1">Got Questions? We Have Answers.</h2>
             </div>
-        </div>
-    </section>
 
-    <!-- BANNER CTA SECTION -->
-    <section class="py-6 md:py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-vaks-dark text-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden relative">
-                <!-- Background Overlay Image -->
-                <div class="absolute inset-0 z-0 opacity-20">
-                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
-                        alt="Produce Background" class="w-full h-full object-cover">
-                </div>
-
-                <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="zoom-in">
-                    <h2 class="text-3xl sm:text-5xl font-black leading-tight">
-                        Bringing Freshness From Our Farms<br>
-                        <span class="text-vaks-lime">To Your Markets.</span>
-                    </h2>
-                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mt-4 font-medium">
-                        Partner with VAKS Global Trading Co. for reliable B2B produce supply, uncompromised quality, and
-                        long-term business growth.
-                    </p>
-                    <div class="mt-8 flex flex-wrap justify-center gap-4">
-                        <button onclick="openQuoteModal()"
-                            class="bg-vaks-lime hover:bg-vaks-lime-hover text-vaks-dark font-black px-9 py-4 rounded-full text-base shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 group">
-                            <span>CONTACT SALES</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-                        <a href="https://wa.me/923218988421" target="_blank" rel="noopener noreferrer"
-                            class="bg-emerald-800 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-full text-base border border-emerald-600 flex items-center gap-2.5 transition-all">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp Inquiry
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER SECTION (SPLIT-BACKGROUND DESIGN WITH LEFT-FACING D-SHAPE PROTRACTOR) -->
-    <footer id="contact" class="py-8 md:py-12 relative overflow-hidden text-vaks-charcoal">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6">
-
-            <!-- SPLIT CARD CONTAINER -->
-            <div
-                class="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200 grid grid-cols-1 lg:grid-cols-12">
-
-                <!-- DECORATIVE D-SHAPE PROTRACTOR SEMI-CIRCLE (CURVED ARCH FACES LEFT TOWARDS WHITE SECTION) -->
-                <div
-                    class="hidden lg:flex absolute top-1/2 left-1/3 -translate-y-1/2 -translate-x-full z-20 items-center justify-end pointer-events-none group">
-                    <div
-                        class="w-16 h-32 md:w-20 md:h-40 bg-[#0B3B24] rounded-l-full border-4 border-r-0 border-vaks-lime shadow-2xl flex items-center justify-center overflow-hidden relative">
-                        <!-- Stylized Protractor Radial Arc Ticks SVG facing Left -->
-                        <svg class="w-full h-full text-vaks-lime p-1" viewBox="0 0 50 100" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <!-- Outer Arch Path -->
-                            <path d="M 50 5 A 45 45 0 0 0 50 95 Z" stroke="#8BC34A" stroke-width="2.5"
-                                stroke-dasharray="3 3" opacity="0.9" fill="#0B3B24" />
-                            <!-- Radial Protractor Angle Ticks (0, 30, 60, 90, 120, 150, 180 deg) -->
-                            <line x1="50" y1="50" x2="10" y2="50" stroke="#8BC34A" stroke-width="2"
-                                stroke-linecap="round" />
-                            <line x1="50" y1="50" x2="18" y2="25" stroke="#8BC34A" stroke-width="1.5"
-                                stroke-linecap="round" />
-                            <line x1="50" y1="50" x2="18" y2="75" stroke="#8BC34A" stroke-width="1.5"
-                                stroke-linecap="round" />
-                            <line x1="50" y1="50" x2="35" y2="12" stroke="#8BC34A" stroke-width="1.5"
-                                stroke-linecap="round" />
-                            <line x1="50" y1="50" x2="35" y2="88" stroke="#8BC34A" stroke-width="1.5"
-                                stroke-linecap="round" />
-                            <!-- Inner Dial Semi-Circle Guide Line -->
-                            <path d="M 50 25 A 25 25 0 0 0 50 75" stroke="#FFFFFF" stroke-width="1.5"
-                                stroke-dasharray="2 2" />
-                            <!-- Center Axis Pivot Dot -->
-                            <circle cx="46" cy="50" r="4" fill="#8BC34A" />
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- LEFT COLUMN (1/3 WIDTH - WHITE SIDE: BOX-FREE ENLARGED LOGO & BIO) -->
-                <div
-                    class="lg:col-span-4 bg-white p-8 sm:p-12 md:p-16 flex flex-col justify-between items-center text-center relative z-10 border-b lg:border-b-0 lg:border-r border-gray-100">
-                    <div class="w-full flex flex-col items-center">
-                        <!-- BOX-FREE ENLARGED LOGO sitting directly on white background -->
-                        <a href="#" class="inline-block mb-8 group focus:outline-none w-full"
-                            aria-label="VAKS Global Trading Co. Home">
-                            <img src="vaksLogo.png" alt="VAKS Global Trading Co."
-                                class="h-24 sm:h-28 md:h-32 lg:h-36 w-auto mx-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm">
-                        </a>
-
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-sm font-medium">
-                            <strong>VAKS Global Trading Co. (VGTC)</strong> is a premier Pakistani B2B importer,
-                            exporter, and trader of farm-fresh fruits & vegetables serving the UAE, Qatar, Oman, Asia,
-                            and Europe.
+            <div class="space-y-4" id="faq-accordion">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <button
+                        class="accordion-header w-full text-left p-5 flex justify-between items-center gap-4 hover:bg-gray-50 transition-colors font-bold text-sm text-vaks-dark focus:outline-none"
+                        aria-expanded="false">
+                        <span>Q1: What are your main target markets for fresh produce export?</span>
+                        <i
+                            class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-5 py-0">
+                        <p class="text-xs text-gray-600 leading-relaxed py-4 border-t border-gray-100">
+                            We regularly export high-grade Pakistani fresh fruits and vegetables to <strong>Dubai (UAE),
+                                Qatar, Muscat (Oman), Sri Lanka, Malaysia, Singapore, and European ports</strong>. We
+                            also arrange shipments to any international port with cold chain logistics.
                         </p>
                     </div>
+                </div>
 
-                    <!-- SOCIAL BADGES -->
-                    <div class="flex items-center justify-center gap-3.5 pt-8 w-full border-t border-gray-100 mt-8">
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <button
+                        class="accordion-header w-full text-left p-5 flex justify-between items-center gap-4 hover:bg-gray-50 transition-colors font-bold text-sm text-vaks-dark focus:outline-none"
+                        aria-expanded="false">
+                        <span>Q2: Where is your Head Office and primary warehouse located?</span>
+                        <i
+                            class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-5 py-0">
+                        <p class="text-xs text-gray-600 leading-relaxed py-4 border-t border-gray-100">
+                            Our Head Office is situated at <strong>Suite # 10th Floor, Land Mark Plaza, Opp. Jang Press,
+                                I.I. Chundrigar Road, Karachi – 74200</strong>. Our sorting, grading, and yard warehouse
+                            is at <strong>Shop # 123, Onion & Potato Shed, New Sabzi Mandi, Karachi</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <button
+                        class="accordion-header w-full text-left p-5 flex justify-between items-center gap-4 hover:bg-gray-50 transition-colors font-bold text-sm text-vaks-dark focus:outline-none"
+                        aria-expanded="false">
+                        <span>Q3: Do you ship to European and Asian ports with phytosanitary compliance?</span>
+                        <i
+                            class="accordion-icon fa-solid fa-chevron-down text-vaks-dark transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-5 py-0">
+                        <p class="text-xs text-gray-600 leading-relaxed py-4 border-t border-gray-100">
+                            Yes! All our shipments comply with destination country plant quarantine regulations. We
+                            issue official Phytosanitary Certificates, Certificate of Origin, Form E, and Bill of Lading
+                            for all shipments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER CTA SECTION (MATCHING REFERENCE MOCKUP BOTTOM BANNER) -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="bg-[#F4F6F0] rounded-3xl p-8 sm:p-12 md:p-16 grid lg:grid-cols-12 gap-8 items-center border border-gray-200/60 shadow-sm">
+
+                <!-- Left Content -->
+                <div class="lg:col-span-5 space-y-4" data-aos="fade-right">
+                    <h2 class="text-3xl sm:text-4xl font-black text-vaks-dark leading-tight">
+                        Bringing Freshness<br>From Our Farms<br>To Your Markets
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-600 font-medium">
+                        Partner with us for reliable supply, premium quality, and long-term growth.
+                    </p>
+                    <div class="pt-2">
+                        <button onclick="openQuoteModal()"
+                            class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-xs tracking-wider uppercase shadow-lg transition-all inline-flex items-center gap-2 group">
+                            <span>GET IN TOUCH</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Produce Spread Graphic -->
+                <div class="lg:col-span-7 relative" data-aos="fade-left">
+                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1200&q=80"
+                            alt="Fresh Harvest Produce Box Spread" class="w-full h-[240px] sm:h-[300px] object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION (MATCHING REFERENCE MOCKUP FOOTER EXACTLY) -->
+    <footer id="contact" class="bg-vaks-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-12 border-b border-emerald-900/80">
+
+                <!-- COL 1: LOGO & BRAND SUBTITLE -->
+                <div class="lg:col-span-1 space-y-4">
+                    <a href="#" class="inline-block" aria-label="VAKS Global Trading Co.">
+                        <img src="vaksLogo.png" alt="VAKS Global Trading Co."
+                            class="h-16 w-auto object-contain bg-white/10 p-2 rounded-xl">
+                    </a>
+                    <p class="text-xs text-gray-300 leading-relaxed font-medium">
+                        <strong>VAKS Global Trading Co.</strong><br>
+                        Pakistani B2B Importer, Exporter, and Trader of farm-fresh produce worldwide.
+                    </p>
+                </div>
+
+                <!-- COL 2: QUICK LINKS -->
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-4">QUICK LINKS</h4>
+                    <ul class="space-y-2.5 text-xs text-gray-300 font-medium">
+                        <li><a href="#home" class="hover:text-vaks-lime transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-vaks-lime transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-vaks-lime transition-colors">Services</a></li>
+                        <li><a href="#products" class="hover:text-vaks-lime transition-colors">Products</a></li>
+                        <li><a href="#markets" class="hover:text-vaks-lime transition-colors">Markets</a></li>
+                        <li><a href="#contact" class="hover:text-vaks-lime transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: OUR SERVICES -->
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-4">OUR SERVICES</h4>
+                    <ul class="space-y-2.5 text-xs text-gray-300 font-medium">
+                        <li><a href="#services" class="hover:text-vaks-lime transition-colors">Sourcing</a></li>
+                        <li><a href="#services" class="hover:text-vaks-lime transition-colors">Packaging</a></li>
+                        <li><a href="#services" class="hover:text-vaks-lime transition-colors">Logistics</a></li>
+                        <li><a href="#services" class="hover:text-vaks-lime transition-colors">Exporting</a></li>
+                        <li><a href="#services" class="hover:text-vaks-lime transition-colors">Quality Control</a></li>
+                        <li><a href="#services" class="hover:text-vaks-lime transition-colors">Customer Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: CONTACT US -->
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-4">CONTACT US</h4>
+                    <ul class="space-y-3 text-xs text-gray-300 font-medium">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-vaks-lime flex-shrink-0"></i>
+                            <a href="tel:+923001234567" class="hover:text-vaks-lime transition-colors">+92 300
+                                1234567</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-vaks-lime flex-shrink-0"></i>
+                            <a href="mailto:info@vaksglobal.com"
+                                class="hover:text-vaks-lime transition-colors">info@vaksglobal.com</a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-vaks-lime flex-shrink-0 mt-0.5"></i>
+                            <span>Karachi, Pakistan</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COL 5: FOLLOW US -->
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-4">FOLLOW US</h4>
+                    <div class="flex items-center gap-3">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-vaks-bg hover:bg-vaks-dark hover:text-vaks-lime text-vaks-dark border border-gray-200 flex items-center justify-center text-sm transition-all shadow-sm"
+                            class="w-9 h-9 rounded-full border border-gray-600 hover:border-vaks-lime hover:text-vaks-lime flex items-center justify-center text-sm transition-all"
                             aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-vaks-bg hover:bg-vaks-dark hover:text-vaks-lime text-vaks-dark border border-gray-200 flex items-center justify-center text-sm transition-all shadow-sm"
+                            class="w-9 h-9 rounded-full border border-gray-600 hover:border-vaks-lime hover:text-vaks-lime flex items-center justify-center text-sm transition-all"
                             aria-label="Facebook">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-vaks-bg hover:bg-vaks-dark hover:text-vaks-lime text-vaks-dark border border-gray-200 flex items-center justify-center text-sm transition-all shadow-sm"
+                            class="w-9 h-9 rounded-full border border-gray-600 hover:border-vaks-lime hover:text-vaks-lime flex items-center justify-center text-sm transition-all"
                             aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- RIGHT COLUMN (2/3 WIDTH - DEEP FOREST GREEN SIDE: LINKS & CONTACT WITH SPACIOUS PADDING) -->
-                <div
-                    class="lg:col-span-8 bg-[#0B3B24] p-8 sm:p-12 md:p-16 text-white flex flex-col justify-between relative">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 lg:gap-10">
-
-                        <!-- SUB-COL 1: QUICK LINKS -->
-                        <div>
-                            <h4
-                                class="text-white font-extrabold text-sm uppercase tracking-wider mb-5 border-l-4 border-vaks-lime pl-2.5">
-                                QUICK LINKS</h4>
-                            <ul class="space-y-3 text-xs text-gray-200 font-medium">
-                                <li><a href="#home" class="hover:text-vaks-lime transition-colors">Home</a></li>
-                                <li><a href="#about" class="hover:text-vaks-lime transition-colors">About Us</a></li>
-                                <li><a href="#products" class="hover:text-vaks-lime transition-colors">Export
-                                        Produce</a></li>
-                                <li><a href="#services" class="hover:text-vaks-lime transition-colors">Solutions &
-                                        Services</a></li>
-                                <li><a href="#markets" class="hover:text-vaks-lime transition-colors">Target Global
-                                        Markets</a></li>
-                                <li><a href="#faqs" class="hover:text-vaks-lime transition-colors">Trade FAQs</a></li>
-                                <li><a href="#contact" class="hover:text-vaks-lime transition-colors">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- SUB-COL 2: OUR SERVICES -->
-                        <div>
-                            <h4
-                                class="text-white font-extrabold text-sm uppercase tracking-wider mb-5 border-l-4 border-vaks-lime pl-2.5">
-                                OUR SERVICES</h4>
-                            <ul class="space-y-3 text-xs text-gray-200 font-medium">
-                                <li><a href="#services" class="hover:text-vaks-lime transition-colors">Farm Direct
-                                        Sourcing</a></li>
-                                <li><a href="#services" class="hover:text-vaks-lime transition-colors">Phytosanitary
-                                        Control</a></li>
-                                <li><a href="#services" class="hover:text-vaks-lime transition-colors">Custom Export
-                                        Packaging</a></li>
-                                <li><a href="#services" class="hover:text-vaks-lime transition-colors">Cold Chain
-                                        Logistics</a></li>
-                                <li><a href="#services" class="hover:text-vaks-lime transition-colors">Sea & Air Cargo
-                                        Export</a></li>
-                                <li><a href="#services" class="hover:text-vaks-lime transition-colors">24/7 B2B Support
-                                        Desk</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- SUB-COL 3: CONTACT DETAILS -->
-                        <div>
-                            <h4
-                                class="text-white font-extrabold text-sm uppercase tracking-wider mb-5 border-l-4 border-vaks-lime pl-2.5">
-                                CONTACT DETAILS</h4>
-                            <ul class="space-y-4 text-xs text-gray-200">
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-building text-vaks-lime mt-1 flex-shrink-0"></i>
-                                    <div>
-                                        <strong class="text-white">Head Office:</strong><br>
-                                        Suite # 10th Floor, Land Mark Plaza, Opp. Jang Press, I.I. Chundrigar Road,
-                                        Karachi – 74200
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <i class="fa-solid fa-warehouse text-vaks-lime mt-1 flex-shrink-0"></i>
-                                    <div>
-                                        <strong class="text-white">Yard / Warehouse:</strong><br>
-                                        Shop # 123, Onion & Potato Shed, New Sabzi Mandi, Karachi
-                                    </div>
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-phone text-vaks-lime flex-shrink-0"></i>
-                                    <div>
-                                        <a href="tel:+971503908597" class="hover:text-vaks-lime transition-colors">+971
-                                            50 390 8597</a> |
-                                        <a href="tel:+923218988421" class="hover:text-vaks-lime transition-colors">+92
-                                            321 8988421</a>
-                                    </div>
-                                </li>
-                                <li class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-envelope text-vaks-lime flex-shrink-0"></i>
-                                    <a href="mailto:vakspak@gmail.com"
-                                        class="hover:text-vaks-lime transition-colors">vakspak@gmail.com</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <!-- COPYRIGHT FOOTER BAR -->
-                    <div
-                        class="pt-8 mt-10 border-t border-emerald-900/80 text-xs text-gray-300 flex flex-col sm:flex-row justify-between items-center gap-3">
-                        <p>&copy; 2026 VAKS Global Trading Co. All Rights Reserved.</p>
-                        <p class="text-emerald-400 font-medium">Designed for B2B Fresh Produce Importers & Exporters</p>
-                    </div>
-                </div>
-
             </div>
 
+            <!-- COPYRIGHT BAR -->
+            <div class="pt-8 text-center text-xs text-gray-400 font-medium">
+                <p>&copy; 2024 VAKS Global Trading Co. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- INTERACTIVE B2B QUOTE / INQUIRY MODAL -->
+    <!-- INTERACTIVE B2B QUOTE MODAL -->
     <div id="quote-modal"
         class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 transition-all duration-300">
-        <div
-            class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200">
-            <!-- Close Button -->
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
             <button onclick="closeQuoteModal()"
                 class="absolute top-5 right-5 text-gray-400 hover:text-vaks-dark text-xl p-2 focus:outline-none">
                 <i class="fa-solid fa-xmark"></i>
@@ -1311,7 +882,7 @@
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Select Produce Item *</label>
                     <select id="modal-product" required
                         class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark font-medium focus:ring-2 focus:ring-vaks-lime focus:outline-none">
-                        <option value="Potato (Export Quality)">Potato (Export Quality)</option>
+                        <option value="Potato (Mozika / Asterix)">Potato (Mozika / Asterix)</option>
                         <option value="Onion (Red & Yellow)">Onion (Red & Yellow)</option>
                         <option value="Mango (Chaunsa / Sindhri)">Mango (Chaunsa / Sindhri)</option>
                         <option value="Kinnow (Fresh Mandarins)">Kinnow (Fresh Mandarins)</option>
@@ -1334,8 +905,7 @@
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Destination Port / Country
-                            *</label>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Destination Port *</label>
                         <input type="text" required placeholder="e.g. Jebel Ali / Dubai, UAE"
                             class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark focus:ring-2 focus:ring-vaks-lime focus:outline-none">
                     </div>
@@ -1347,15 +917,14 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Required Quantity &
-                        Specs</label>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Quantity & Specs</label>
                     <textarea rows="3"
-                        placeholder="Specify required container count, packing preference (e.g. 10kg mesh bags), or delivery schedule..."
+                        placeholder="Specify required container count, packing preference (e.g. 10kg mesh bags)..."
                         class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark focus:ring-2 focus:ring-vaks-lime focus:outline-none"></textarea>
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-3.5 rounded-xl text-sm tracking-wider shadow-lg transition-colors flex items-center justify-center gap-2">
+                    class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-3.5 rounded-xl text-xs tracking-wider uppercase shadow-lg transition-colors flex items-center justify-center gap-2">
                     <i class="fa-solid fa-paper-plane text-vaks-lime"></i> SUBMIT B2B QUOTE REQUEST
                 </button>
             </form>
