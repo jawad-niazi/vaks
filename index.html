@@ -85,7 +85,8 @@
 <body class="bg-[#F9FAF7] text-vaks-charcoal font-sans antialiased selection:bg-vaks-lime selection:text-vaks-dark">
 
     <!-- MAIN NAVBAR (MATCHING REFERENCE MOCKUP HEADER) -->
-    <header id="main-header" class="absolute top-0 w-full z-30 transition-all">
+    <header id="main-header"
+        class="absolute top-0 w-full z-50 transition-all bg-white/80 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between min-h-[5rem] py-2">
 
@@ -93,12 +94,12 @@
                 <a href="#" class="flex items-center gap-3 group focus:outline-none"
                     aria-label="VAKS Global Trading Co.">
                     <img src="vaksLogo.png" alt="VAKS Global Trading Co."
-                        class="h-16 md:h-20 w-auto object-contain pl-6 md:pl-12 pt-4">
+                        class="h-16 md:h-20 w-auto object-contain pl-0 md:pl-12 pt-2 md:pt-4">
                 </a>
 
                 <!-- DESKTOP NAVIGATION -->
                 <nav
-                    class="hidden md:flex items-center gap-8 text-xs font-extrabold uppercase tracking-wider text-vaks-charcoal">
+                    class="hidden md:flex items-center gap-6 lg:gap-8 text-[11px] lg:text-xs font-extrabold uppercase tracking-wider text-vaks-charcoal">
                     <a href="index.html"
                         class="nav-link hover:text-vaks-lime text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">HOME</a>
                     <a href="about.html"
@@ -116,9 +117,9 @@
                 </nav>
 
                 <!-- GET A QUOTE CTA BUTTON -->
-                <div class="hidden lg:flex items-center gap-3">
+                <div class="hidden md:flex items-center gap-3">
                     <button onclick="openQuoteModal()"
-                        class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-6 py-2.5 rounded-full text-xs tracking-wider uppercase shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                        class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-5 lg:px-6 py-2.5 rounded-full text-[10px] lg:text-xs tracking-wider uppercase shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
                         GET A QUOTE
                     </button>
                 </div>
@@ -133,7 +134,8 @@
         </div>
 
         <!-- MOBILE MENU DRAWER -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-6 shadow-xl">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-6 shadow-xl relative z-50">
             <div class="flex flex-col gap-3 font-bold text-gray-700 text-sm">
                 <a href="index.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">HOME</a>
                 <a href="about.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">ABOUT US</a>
@@ -153,109 +155,116 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (MATCHING REFERENCE MOCKUP EXACTLY) -->
-    <section id="home" class="relative overflow-hidden bg-[#F9FAF7] min-h-[500px] lg:min-h-[600px] flex items-center">
-        <!-- FULL COVER BACKGROUND IMAGE (NATIVE) -->
-        <div class="absolute inset-0 z-0 pointer-events-none">
-            <img src="hero.jpeg" alt="VAKS Global Trade and Fresh Produce"
-                class="absolute inset-0 w-full h-full object-cover object-center">
+    <!-- HERO SECTION -->
+    <section id="home"
+        class="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-[#F4F6F0] md:min-h-[500px] lg:min-h-[650px] md:block">
+
+        <!-- RESPONSIVE BACKGROUND IMAGE -->
+        <picture class="absolute inset-0 w-full h-full z-0 pointer-events-none">
+            <source media="(max-width: 767px)" srcset="hero-mobile.jpeg">
+            <img src="hero.jpeg" alt="VAKS Global Export"
+                class="absolute inset-0 w-full h-full object-cover object-bottom md:object-right">
+        </picture>
+
+        <!-- Desktop Foggy Overlays -->
+        <div
+            class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#F4F6F0] via-[#F4F6F0]/70 via-30% to-transparent z-10 pointer-events-none">
+        </div>
+        <div
+            class="hidden md:block absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#F4F6F0] via-[#F4F6F0]/80 to-transparent z-10 pointer-events-none">
         </div>
 
-        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
-            <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <!-- TOP TEXT ZONE (Mobile Top) -->
+        <div
+            class="relative z-20 pt-32 pb-8 px-6 text-center flex flex-col items-center w-full max-w-7xl mx-auto md:text-left md:absolute md:inset-0 md:flex-row md:items-center md:pt-0 md:pb-0 md:px-8">
+            <div class="flex flex-col md:w-1/2 lg:w-5/12 space-y-6 relative z-20" data-aos="fade-right"
+                data-aos-duration="1000">
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-dark leading-[1.1] tracking-tight relative z-20">
+                    GLOBAL TRADE.<br>
+                    <span class="text-vaks-lime">FRESH CONNECTIONS.</span>
+                </h1>
 
-                <!-- HERO CONTENT LEFT -->
-                <div class="lg:col-span-6 space-y-6 text-center lg:text-left relative z-20" data-aos="fade-right"
-                    data-aos-duration="1000">
-                    <h1
-                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-dark leading-[1.1] tracking-tight relative z-20">
-                        GLOBAL TRADE.<br>
-                        <span class="text-vaks-lime">FRESH CONNECTIONS.</span>
-                    </h1>
+                <p
+                    class="text-base sm:text-lg text-gray-800 max-w-lg mx-auto md:mx-0 leading-relaxed font-semibold relative z-20">
+                    We export premium quality fruits and vegetables across the globe with reliability and care.
+                </p>
 
-                    <p
-                        class="text-base sm:text-lg text-gray-800 max-w-lg mx-auto lg:mx-0 leading-relaxed font-semibold relative z-20">
-                        We export premium quality fruits and vegetables across the globe with reliability and care.
-                    </p>
-
-                    <!-- EXPLORE OUR SERVICES PILL BUTTON -->
-                    <div class="pt-2 flex justify-center lg:justify-start relative z-20">
-                        <a href="services.html"
-                            class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all inline-flex items-center gap-3 group relative z-20">
-                            <span>EXPLORE OUR SERVICES</span>
-                            <i
-                                class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1.5 transition-transform"></i>
-                        </a>
-                    </div>
+                <!-- EXPLORE OUR SERVICES PILL BUTTON -->
+                <div class="pt-2 flex justify-center mb-2 md:mb-0 md:justify-start relative z-20 shadow-lg md:shadow-none rounded-full">
+                    <a href="services.html"
+                        class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all inline-flex items-center gap-3 group relative z-20">
+                        <span>EXPLORE OUR SERVICES</span>
+                        <i
+                            class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1.5 transition-transform"></i>
+                    </a>
                 </div>
-
-                <!-- RIGHT SIDE EMPTY SPACE -->
-                <div class="lg:col-span-6 hidden lg:block">
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- MANDATORY USP BANNER GRID (DARK GREEN CARD WITH 4 USP COLUMNS) -->
-    <section class="relative z-30 -mt-16 lg:-mt-24 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-vaks-dark rounded-2xl p-6 sm:p-8 shadow-xl text-white">
-            <div
-                class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-emerald-800/60">
+    <!-- MANDATORY USP BANNER GRID -->
+    <section class="py-8 px-4 bg-[#F4F6F0] md:bg-transparent md:py-0 md:px-0 md:relative md:z-30 md:-mt-20 lg:-mt-24 md:pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="w-full bg-[#0D3B22] rounded-2xl p-6 sm:p-8 shadow-xl text-white">
+                <div
+                    class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-emerald-800/60">
 
-                <!-- USP 1 -->
-                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4 first:pl-0" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div
-                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
-                        <i class="fa-solid fa-globe"></i>
+                    <!-- USP 1 -->
+                    <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4 first:pl-0" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div
+                            class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">GLOBAL REACH</h3>
+                            <p class="text-xs text-gray-300 mt-1 leading-relaxed">Supplying fresh produce to key
+                                international markets.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">GLOBAL REACH</h3>
-                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Supplying fresh produce to key
-                            international markets.</p>
+
+                    <!-- USP 2 -->
+                    <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">PREMIUM QUALITY</h3>
+                            <p class="text-xs text-gray-300 mt-1 leading-relaxed">Carefully sourced and inspected to
+                                meet
+                                global standards.</p>
+                        </div>
                     </div>
+
+                    <!-- USP 3 -->
+                    <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">RELIABLE & SAFE</h3>
+                            <p class="text-xs text-gray-300 mt-1 leading-relaxed">Hygienic handling, secure packaging &
+                                on-time delivery.</p>
+                        </div>
+                    </div>
+
+                    <!-- USP 4 -->
+                    <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="400">
+                        <div
+                            class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">SUSTAINABLE TRADE
+                            </h3>
+                            <p class="text-xs text-gray-300 mt-1 leading-relaxed">Supporting sustainable farming and
+                                long-term partnerships.</p>
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- USP 2 -->
-                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">PREMIUM QUALITY</h3>
-                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Carefully sourced and inspected to meet
-                            global standards.</p>
-                    </div>
-                </div>
-
-                <!-- USP 3 -->
-                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">RELIABLE & SAFE</h3>
-                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Hygienic handling, secure packaging &
-                            on-time delivery.</p>
-                    </div>
-                </div>
-
-                <!-- USP 4 -->
-                <div class="flex items-start gap-4 pt-4 sm:pt-0 sm:pl-4" data-aos="fade-up" data-aos-delay="400">
-                    <div
-                        class="w-11 h-11 rounded-full border border-vaks-lime flex-shrink-0 flex items-center justify-center text-vaks-lime text-lg bg-emerald-950/60">
-                        <i class="fa-solid fa-handshake"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-extrabold text-sm tracking-wider text-white uppercase">SUSTAINABLE TRADE</h3>
-                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">Supporting sustainable farming and
-                            long-term partnerships.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -697,39 +706,32 @@
     </section>
 
     <!-- BANNER CTA SECTION (FULL WIDTH BANNER) -->
-    <section class="relative overflow-hidden bg-[#F4F6F0] py-16 lg:py-24 border-y border-gray-200/60 shadow-sm mt-12">
+    <section
+        class="relative overflow-hidden bg-[#F4F6F0] py-0 md:py-16 lg:py-24 border-y border-gray-200/60 shadow-sm mt-12 flex flex-col md:flex-row items-center">
         <!-- BACKGROUND IMAGE LAYER -->
-        <div class="absolute inset-y-0 right-0 w-full lg:w-[70%] z-0 pointer-events-none">
+        <div
+            class="relative md:absolute inset-y-0 right-0 w-full md:w-1/2 lg:w-[60%] h-[300px] md:h-full z-0 pointer-events-none order-2 md:order-none">
             <img src="image3.jpeg" alt="VAKS Produce Spread"
-                class="absolute inset-0 w-full h-full object-cover object-left"
+                class="absolute inset-0 w-full h-full object-cover object-center md:object-left"
                 style="mask-image: linear-gradient(to right, transparent 0%, black 20%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);">
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-8 items-center">
-
-                <!-- Left Content -->
-                <div class="lg:col-span-6 xl:col-span-5 space-y-4" data-aos="fade-right">
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-vaks-dark leading-tight">
-                        Bringing Freshness<br>From Our Farms<br>To Your Markets
-                    </h2>
-                    <p class="text-sm sm:text-base text-gray-800 font-semibold max-w-md pt-2">
-                        Partner with us for reliable supply, premium quality, and long-term growth.
-                    </p>
-                    <div class="pt-4">
-                        <button onclick="openQuoteModal()"
-                            class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-xs tracking-wider uppercase shadow-lg transition-all inline-flex items-center gap-2 group">
-                            <span>GET IN TOUCH</span>
-                            <i
-                                class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-                    </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-0 order-1 md:order-none">
+            <div class="flex flex-col md:w-1/2 lg:w-5/12 space-y-4 text-center md:text-left" data-aos="fade-right">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-vaks-dark leading-tight">
+                    Bringing Freshness<br>From Our Farms<br>To Your Markets
+                </h2>
+                <p class="text-sm sm:text-base text-gray-800 font-semibold max-w-md pt-2 mx-auto md:mx-0">
+                    Partner with us for reliable supply, premium quality, and long-term growth.
+                </p>
+                <div class="pt-4 flex justify-center md:justify-start">
+                    <button onclick="openQuoteModal()"
+                        class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-xs tracking-wider uppercase shadow-lg transition-all inline-flex items-center gap-2 group">
+                        <span>GET IN TOUCH</span>
+                        <i
+                            class="fa-solid fa-arrow-right text-vaks-lime group-hover:translate-x-1 transition-transform"></i>
+                    </button>
                 </div>
-
-                <!-- Right Side Spacer -->
-                <div class="lg:col-span-6 xl:col-span-7 hidden lg:block">
-                </div>
-
             </div>
         </div>
     </section>
