@@ -84,41 +84,6 @@
 
 <body class="bg-[#F9FAF7] text-vaks-charcoal font-sans antialiased selection:bg-vaks-lime selection:text-vaks-dark">
 
-    <!-- TOP INFO BAR -->
-    <div class="bg-vaks-dark text-white text-xs md:text-sm py-2 px-4 border-b border-emerald-900/50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <!-- Left Info -->
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 text-gray-200">
-                <span class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
-                    <i class="fa-solid fa-location-dot text-vaks-lime"></i>
-                    <span>Karachi, Pakistan</span>
-                </span>
-                <a href="mailto:vakspak@gmail.com"
-                    class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
-                    <i class="fa-solid fa-envelope text-vaks-lime"></i>
-                    <span>info@vaksglobal.com</span>
-                </a>
-            </div>
-
-            <!-- Right Contact Numbers -->
-            <div class="flex flex-wrap items-center justify-center md:justify-end gap-3 text-gray-200">
-                <a href="tel:+971503908597" class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
-                    <i class="fa-solid fa-phone text-vaks-lime"></i>
-                    <span><strong class="text-white">UAE:</strong> +971 50 390 8597</span>
-                </a>
-                <span class="text-gray-500 hidden sm:inline">|</span>
-                <a href="tel:+923001234567" class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
-                    <i class="fa-solid fa-phone text-vaks-lime"></i>
-                    <span><strong class="text-white">PK:</strong> +92 300 1234567</span>
-                </a>
-                <a href="https://wa.me/923218988421" target="_blank" rel="noopener noreferrer"
-                    class="ml-1 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition-colors">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp B2B
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN NAVBAR (MATCHING REFERENCE MOCKUP HEADER) -->
     <header id="main-header" class="absolute top-0 w-full z-30 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,7 +93,7 @@
                 <a href="#" class="flex items-center gap-3 group focus:outline-none"
                     aria-label="VAKS Global Trading Co.">
                     <img src="vaksLogo.png" alt="VAKS Global Trading Co."
-                        class="h-16 md:h-20 w-auto max-w-[220px] object-contain object-left">
+                        class="h-16 md:h-20 w-auto object-contain pl-6 md:pl-12 pt-4">
                 </a>
 
                 <!-- DESKTOP NAVIGATION -->
@@ -190,12 +155,11 @@
 
     <!-- HERO SECTION (MATCHING REFERENCE MOCKUP EXACTLY) -->
     <section id="home" class="relative overflow-hidden bg-[#F9FAF7] min-h-[500px] lg:min-h-[600px] flex items-center">
-        <!-- HTML5 CANVAS HERO IMAGE PLAYER -->
-        <canvas id="hero-canvas" class="absolute inset-y-0 right-0 w-full lg:w-3/5 h-full object-cover object-right z-0"></canvas>
-        
-        <!-- FOGGY GRADIENT OVERLAY PRESERVATION -->
-        <div class="bg-gradient-to-b from-white via-white/80 to-transparent h-36 absolute top-0 inset-x-0 z-10 pointer-events-none"></div>
-        <div class="bg-gradient-to-r from-[#F4F6F0] via-[#F4F6F0]/90 via-40% to-transparent absolute inset-0 z-10 pointer-events-none"></div>
+        <!-- FULL COVER BACKGROUND IMAGE (RIGHT SIDE) WITH DIAGONAL FADE -->
+        <div class="absolute inset-y-0 right-0 w-full lg:w-[85%] xl:w-[75%] z-0 pointer-events-none">
+            <img src="herosection.png" alt="VAKS Global Trade and Fresh Produce"
+                class="absolute inset-0 w-full h-full object-cover object-right [mask-image:linear-gradient(115deg,transparent_10%,black_45%)] [-webkit-mask-image:linear-gradient(115deg,transparent_10%,black_45%)]">
+        </div>
 
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
             <div class="grid lg:grid-cols-12 gap-10 items-center">
