@@ -137,27 +137,78 @@ document.addEventListener('DOMContentLoaded', () => {
         counterObserver.observe(funFactsSection);
     }
 
-    // 6. Active Section Scrollspy (Highlights active link in desktop navbar)
-    const sections = document.querySelectorAll('section[id]');
+    // 6. Active Link Highlighting (Multi-Page)
     const navLinks = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-    window.addEventListener('scroll', () => {
-        let currentSectionId = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            const sectionHeight = section.offsetHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSectionId = section.getAttribute('id');
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPath) {
+            link.classList.add('text-[#8BC34A]', 'font-semibold');
+            if (link.classList.contains('border-b-2')) {
+                link.classList.remove('border-transparent');
+                link.classList.add('border-vaks-lime');
             }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('border-vaks-lime', 'text-vaks-dark');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('border-vaks-lime', 'text-vaks-dark');
-            }
-        });
+        }
     });
+
+    // 8. HTML5 Canvas Hero Image Sequence Player (Scroll-Driven)
+    const initScrollHeroCanvas = () => {
+        const canvas = document.getElementById('hero-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const heroSection = document.querySelector('.hero-section-wrapper') || canvas.parentElement;
+
+        const frameCount = 150; // Total frames in hero-section folder
+        const images = [];
+        let imagesLoaded = 0;
+
+        const drawFrame = (index) => {
+            const img = images[index];
+            if (!img || !img.complete) return;
+            canvas.width = img.naturalWidth || 1920;
+            canvas.height = img.naturalHeight || 1080;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+
+        // Preload frames
+        for (let i = 1; i <= frameCount; i++) {
+            const img = new Image();
+            const frameNumber = i.toString().padStart(3, '0');
+            img.src = `hero-section/ezgif-frame-${frameNumber}.jpg`;
+            img.onload = () => {
+                imagesLoaded++;
+                if (imagesLoaded === 1) drawFrame(0);
+            };
+            images.push(img);
+        }
+
+        // Update frame index based on window scroll position within hero section
+        const updateScrollFrame = () => {
+            const rect = heroSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Calculate scroll progress percentage (0 to 1) relative to Hero viewport
+            const totalScrollableHeight = heroSection.offsetHeight + windowHeight;
+            const currentScroll = Math.max(0, windowHeight - rect.top);
+            const scrollFraction = Math.min(1, Math.max(0, currentScroll / totalScrollableHeight));
+
+            const frameIndex = Math.min(
+                frameCount - 1,
+                Math.floor(scrollFraction * frameCount)
+            );
+
+            requestAnimationFrame(() => drawFrame(frameIndex));
+        };
+
+        window.addEventListener('scroll', updateScrollFrame, { passive: true });
+        window.addEventListener('resize', () => {
+            updateScrollFrame();
+        });
+    };
+
+    initScrollHeroCanvas();
 });
 
 // 7. Global Quote Modal Logic

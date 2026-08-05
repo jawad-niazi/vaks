@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAKS Global Trading Co. (VGTC) | Premium Fresh Produce Exporter Pakistan</title>
+    <meta name="description"
+        content="VAKS Global Trading Co. (VGTC) is a premier B2B importer & exporter of fresh fruits and vegetables from Pakistan, serving UAE, Qatar, Oman, Asia, and Europe.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vaks-dark': '#0B3B24',
+                        'vaks-lime': '#8BC34A',
+                        'vaks-lime-hover': '#7cb337',
+                        'vaks-bg': '#F9FAF7',
+                        'vaks-soft': '#F4F6F0',
+                        'vaks-charcoal': '#1E1E1E',
+                        'vaks-muted': '#555555'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .hero-pattern {
+            background-color: #F9FAF7;
+            background-image: radial-gradient(#0B3B24 0.5px, transparent 0.5px), radial-gradient(#0B3B24 0.5px, #F9FAF7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.03;
+        }
+
+        .badge-pulse {
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(139, 195, 74, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(139, 195, 74, 0);
+            }
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        .accordion-content.open {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F9FAF7] text-vaks-charcoal font-sans antialiased selection:bg-vaks-lime selection:text-vaks-dark">
+
+    <!-- TOP INFO BAR -->
+    <div class="bg-vaks-dark text-white text-xs md:text-sm py-2 px-4 border-b border-emerald-900/50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <!-- Left Info -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 text-gray-200">
+                <span class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
+                    <i class="fa-solid fa-location-dot text-vaks-lime"></i>
+                    <span>Karachi, Pakistan</span>
+                </span>
+                <a href="mailto:vakspak@gmail.com"
+                    class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
+                    <i class="fa-solid fa-envelope text-vaks-lime"></i>
+                    <span>info@vaksglobal.com</span>
+                </a>
+            </div>
+
+            <!-- Right Contact Numbers -->
+            <div class="flex flex-wrap items-center justify-center md:justify-end gap-3 text-gray-200">
+                <a href="tel:+971503908597" class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
+                    <i class="fa-solid fa-phone text-vaks-lime"></i>
+                    <span><strong class="text-white">UAE:</strong> +971 50 390 8597</span>
+                </a>
+                <span class="text-gray-500 hidden sm:inline">|</span>
+                <a href="tel:+923001234567" class="flex items-center gap-1.5 hover:text-vaks-lime transition-colors">
+                    <i class="fa-solid fa-phone text-vaks-lime"></i>
+                    <span><strong class="text-white">PK:</strong> +92 300 1234567</span>
+                </a>
+                <a href="https://wa.me/923218988421" target="_blank" rel="noopener noreferrer"
+                    class="ml-1 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition-colors">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp B2B
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR (MATCHING REFERENCE MOCKUP HEADER) -->
+    <header id="main-header" class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between min-h-[5rem] py-2">
+
+                <!-- BRAND LOGO WITH SUBTITLE -->
+                <a href="#" class="flex items-center gap-3 group focus:outline-none"
+                    aria-label="VAKS Global Trading Co.">
+                    <img src="vaksLogo.png" alt="VAKS Global Trading Co."
+                        class="h-16 md:h-20 w-auto max-w-[220px] object-contain object-left">
+                </a>
+
+                <!-- DESKTOP NAVIGATION -->
+                <nav
+                    class="hidden md:flex items-center gap-8 text-xs font-extrabold uppercase tracking-wider text-vaks-charcoal">
+                    <a href="index.html"
+                        class="nav-link hover:text-vaks-lime text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">HOME</a>
+                    <a href="about.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">ABOUT
+                        US</a>
+                    <a href="services.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">SERVICES</a>
+                    <a href="products.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">PRODUCTS</a>
+                    <a href="markets.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">MARKETS</a>
+                    <a href="contact.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">CONTACT
+                        US</a>
+                </nav>
+
+                <!-- GET A QUOTE CTA BUTTON -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <button onclick="openQuoteModal()"
+                        class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-6 py-2.5 rounded-full text-xs tracking-wider uppercase shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                        GET A QUOTE
+                    </button>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg text-vaks-dark hover:bg-gray-100 focus:outline-none"
+                    aria-label="Toggle menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU DRAWER -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-6 shadow-xl">
+            <div class="flex flex-col gap-3 font-bold text-gray-700 text-sm">
+                <a href="index.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">HOME</a>
+                <a href="about.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">ABOUT US</a>
+                <a href="services.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">SERVICES</a>
+                <a href="products.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">PRODUCTS</a>
+                <a href="markets.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">MARKETS</a>
+                <a href="contact.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">CONTACT US</a>
+                <button onclick="openQuoteModal()"
+                    class="mt-2 w-full bg-vaks-dark text-white font-bold py-3 rounded-full text-center text-xs tracking-wider">
+                    GET A QUOTE
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- MARKETS PAGE CONTENT -->
+    <main class="py-16 md:py-24 bg-vaks-bg relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto bg-gradient-to-r from-[#0B3B24] to-[#0F4C2E] text-white py-16 px-6 rounded-3xl mb-12 shadow-xl" data-aos="fade-up">
+                <span class="text-vaks-lime font-black tracking-widest text-xs uppercase mb-3 block">GLOBAL EXPORT DESTINATIONS</span>
+                <h1 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Our Markets</h1>
+                <div class="w-24 h-1 bg-vaks-lime mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-200 text-lg">Supplying premium agricultural products to key international markets with efficiency and reliability.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- GCC -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 border-t-4 border-t-[#8BC34A] hover:-translate-y-1 hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-[#8BC34A]">
+                            <i class="fa-solid fa-ship text-2xl"></i>
+                        </div>
+                        <span class="bg-[#8BC34A]/15 text-[#0B3B24] font-semibold px-3 py-1 rounded-full text-xs">Middle East</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-vaks-dark mb-4">GCC / Middle East</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Dubai (UAE)</li>
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Doha (Qatar)</li>
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Muscat (Oman)</li>
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Saudi Arabia</li>
+                    </ul>
+                    <div class="pt-4 border-t border-gray-100">
+                        <p class="text-sm text-gray-500"><strong class="text-vaks-dark">Transit Time:</strong> 3-7 Days (Sea Freight)</p>
+                    </div>
+                </div>
+
+                <!-- Southeast Asia -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 border-t-4 border-t-[#8BC34A] hover:-translate-y-1 hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-[#8BC34A]">
+                            <i class="fa-solid fa-anchor text-2xl"></i>
+                        </div>
+                        <span class="bg-[#8BC34A]/15 text-[#0B3B24] font-semibold px-3 py-1 rounded-full text-xs">Asia</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-vaks-dark mb-4">Southeast Asia</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Colombo (Sri Lanka)</li>
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Port Klang (Malaysia)</li>
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Singapore</li>
+                    </ul>
+                    <div class="pt-4 border-t border-gray-100">
+                        <p class="text-sm text-gray-500"><strong class="text-vaks-dark">Transit Time:</strong> 10-15 Days (Sea Freight)</p>
+                    </div>
+                </div>
+
+                <!-- Europe -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 border-t-4 border-t-[#8BC34A] hover:-translate-y-1 hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-[#8BC34A]">
+                            <i class="fa-solid fa-plane-departure text-2xl"></i>
+                        </div>
+                        <span class="bg-[#8BC34A]/15 text-[#0B3B24] font-semibold px-3 py-1 rounded-full text-xs">Global</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-vaks-dark mb-4">Europe & Int.</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> United Kingdom</li>
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Central Europe</li>
+                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-location-dot text-[#8BC34A] mr-3"></i> Central Asia</li>
+                    </ul>
+                    <div class="pt-4 border-t border-gray-100">
+                        <p class="text-sm text-gray-500"><strong class="text-vaks-dark">Compliance:</strong> Global GAP, ISO Certified</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="contact" class="w-full overflow-hidden relative my-0">
+
+
+        <!-- FULL-WIDTH SPLIT LAYOUT -->
+        <div class="grid md:grid-cols-[1fr,2.5fr] w-full min-h-[400px]">
+
+            <!-- LEFT WHITE SIDE -->
+            <div class="bg-white p-10 md:p-14 flex flex-col items-center justify-center text-center relative z-10">
+                <a href="#" class="inline-block" aria-label="VAKS Global Trading Co.">
+                    <img src="vaksLogo.png" alt="VAKS Global Trading Co."
+                        class="h-28 md:h-36 w-auto object-contain mb-4">
+                </a>
+                <p class="text-sm text-gray-600 leading-relaxed font-medium mb-6">
+                    <strong>VAKS Global Trading Co.</strong><br>
+                    Pakistani B2B Importer, Exporter, and Trader of farm-fresh produce worldwide.
+                </p>
+                <div class="flex items-center justify-center gap-3">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-gray-300 hover:border-vaks-lime text-gray-500 hover:text-vaks-lime flex items-center justify-center text-base transition-all"
+                        aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-gray-300 hover:border-vaks-lime text-gray-500 hover:text-vaks-lime flex items-center justify-center text-base transition-all"
+                        aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-gray-300 hover:border-vaks-lime text-gray-500 hover:text-vaks-lime flex items-center justify-center text-base transition-all"
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT GREEN SIDE -->
+            <div class="bg-[#0B3B24] p-10 md:p-14 text-white relative z-10 flex flex-col justify-center">
+                <!-- Seamless Green D-Extension -->
+                <div
+                    class="absolute top-1/2 left-0 -translate-x-full -translate-y-1/2 hidden md:block z-10 pointer-events-none">
+                    <svg width="40" height="80" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Clean solid path using exact brand green (#0B3B24) -->
+                        <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80V0Z" fill="#0B3B24" />
+                    </svg>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 max-w-4xl mx-auto md:mx-0 w-full">
+
+                    <!-- QUICK LINKS -->
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-5">QUICK LINKS</h4>
+                        <ul class="space-y-3 text-sm text-white font-medium">
+                            <li><a href="index.html" class="nav-link hover:text-vaks-lime transition-colors">Home</a></li>
+                            <li><a href="about.html" class="nav-link hover:text-vaks-lime transition-colors">About Us</a></li>
+                            <li><a href="services.html" class="nav-link hover:text-vaks-lime transition-colors">Services</a></li>
+                            <li><a href="products.html" class="nav-link hover:text-vaks-lime transition-colors">Products</a></li>
+                            <li><a href="markets.html" class="nav-link hover:text-vaks-lime transition-colors">Markets</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- OUR SERVICES -->
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-5">OUR SERVICES</h4>
+                        <ul class="space-y-3 text-sm text-white font-medium">
+                            <li><a href="services.html" class="nav-link hover:text-vaks-lime transition-colors">Sourcing</a></li>
+                            <li><a href="services.html" class="nav-link hover:text-vaks-lime transition-colors">Packaging</a></li>
+                            <li><a href="services.html" class="nav-link hover:text-vaks-lime transition-colors">Logistics</a></li>
+                            <li><a href="services.html" class="nav-link hover:text-vaks-lime transition-colors">Exporting</a></li>
+                            <li><a href="services.html" class="nav-link hover:text-vaks-lime transition-colors">Quality Control</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CONTACT DETAILS -->
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-5">CONTACT US</h4>
+                        <ul class="space-y-4 text-sm text-white font-medium">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-phone text-vaks-lime flex-shrink-0"></i>
+                                <span><strong>UAE:</strong> +971 50 390 8597</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-phone text-vaks-lime flex-shrink-0"></i>
+                                <span><strong>PK:</strong> +92 300 1234567</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-envelope text-vaks-lime flex-shrink-0"></i>
+                                <a href="mailto:info@vaksglobal.com"
+                                    class="hover:text-vaks-lime transition-colors">info@vaksglobal.com</a>
+                            </li>
+                            <li class="flex items-start gap-3 pt-2">
+                                <i class="fa-solid fa-location-dot text-vaks-lime flex-shrink-0 mt-1"></i>
+                                <span><strong>Head Office:</strong> Karachi, Pakistan</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-map-pin text-vaks-lime flex-shrink-0 mt-1"></i>
+                                <span><strong>Yard:</strong> New Sabzi Mandi</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM COPYRIGHT BAR -->
+        <div class="bg-[#072718] text-gray-400 py-4 text-center text-sm w-full relative z-20">
+            <p>&copy; 2024 VAKS Global Trading Co. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE B2B QUOTE MODAL -->
+    <div id="quote-modal"
+        class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeQuoteModal()"
+                class="absolute top-5 right-5 text-gray-400 hover:text-vaks-dark text-xl p-2 focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div
+                    class="w-10 h-10 rounded-xl bg-vaks-dark text-vaks-lime flex items-center justify-center text-lg font-bold">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-extrabold text-vaks-dark">Request B2B Export Quote</h3>
+                    <p class="text-xs text-gray-500">Get direct FOB / CIF pricing within 24 hours.</p>
+                </div>
+            </div>
+
+            <form id="quote-form" class="space-y-4" onsubmit="handleQuoteSubmit(event)">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Select Produce Item *</label>
+                    <select id="modal-product" required
+                        class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark font-medium focus:ring-2 focus:ring-vaks-lime focus:outline-none">
+                        <option value="Potato (Mozika / Asterix)">Potato (Mozika / Asterix)</option>
+                        <option value="Onion (Red & Yellow)">Onion (Red & Yellow)</option>
+                        <option value="Mango (Chaunsa / Sindhri)">Mango (Chaunsa / Sindhri)</option>
+                        <option value="Kinnow (Fresh Mandarins)">Kinnow (Fresh Mandarins)</option>
+                        <option value="Mixed Container / Other">Mixed Container / Other Produce</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Full Name *</label>
+                        <input type="text" required placeholder="e.g. Ahmed Al-Maktoum"
+                            class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark focus:ring-2 focus:ring-vaks-lime focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Company Name *</label>
+                        <input type="text" required placeholder="e.g. Gulf Fresh Trading LLC"
+                            class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark focus:ring-2 focus:ring-vaks-lime focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Destination Port *</label>
+                        <input type="text" required placeholder="e.g. Jebel Ali / Dubai, UAE"
+                            class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark focus:ring-2 focus:ring-vaks-lime focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Phone / WhatsApp *</label>
+                        <input type="tel" required placeholder="+971 50 000 0000"
+                            class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark focus:ring-2 focus:ring-vaks-lime focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Quantity & Specs</label>
+                    <textarea rows="3"
+                        placeholder="Specify required container count, packing preference (e.g. 10kg mesh bags)..."
+                        class="w-full bg-vaks-bg border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-vaks-dark focus:ring-2 focus:ring-vaks-lime focus:outline-none"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-vaks-dark hover:bg-emerald-900 text-white font-bold py-3.5 rounded-xl text-xs tracking-wider uppercase shadow-lg transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-vaks-lime"></i> SUBMIT B2B QUOTE REQUEST
+                </button>
+            </form>
+
+            <div id="form-success" class="hidden text-center py-8 space-y-3">
+                <div
+                    class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="text-xl font-bold text-vaks-dark">Inquiry Submitted Successfully!</h4>
+                <p class="text-xs text-gray-600 max-w-sm mx-auto">Thank you. Our B2B export manager will get in touch
+                    with your customized rate quote shortly.</p>
+                <button onclick="closeQuoteModal()"
+                    class="mt-4 bg-vaks-dark text-white font-bold px-6 py-2 rounded-xl text-xs">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS JS Library CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom Application Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

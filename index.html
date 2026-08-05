@@ -120,32 +120,33 @@
     </div>
 
     <!-- MAIN NAVBAR (MATCHING REFERENCE MOCKUP HEADER) -->
-    <header id="main-header" class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm transition-all">
+    <header id="main-header" class="absolute top-0 w-full z-30 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between min-h-[5rem] py-2">
 
                 <!-- BRAND LOGO WITH SUBTITLE -->
                 <a href="#" class="flex items-center gap-3 group focus:outline-none"
                     aria-label="VAKS Global Trading Co.">
-                    <img src="vaksLogo.png" alt="VAKS Global Trading Co." class="h-12 md:h-16 w-auto object-contain">
+                    <img src="vaksLogo.png" alt="VAKS Global Trading Co."
+                        class="h-16 md:h-20 w-auto max-w-[220px] object-contain object-left">
                 </a>
 
                 <!-- DESKTOP NAVIGATION -->
                 <nav
                     class="hidden md:flex items-center gap-8 text-xs font-extrabold uppercase tracking-wider text-vaks-charcoal">
-                    <a href="#home"
-                        class="hover:text-vaks-lime text-vaks-dark transition-colors py-1 border-b-2 border-vaks-lime">HOME</a>
-                    <a href="#about"
-                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">ABOUT
+                    <a href="index.html"
+                        class="nav-link hover:text-vaks-lime text-vaks-dark transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">HOME</a>
+                    <a href="about.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">ABOUT
                         US</a>
-                    <a href="#services"
-                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">SERVICES</a>
-                    <a href="#products"
-                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">PRODUCTS</a>
-                    <a href="#markets"
-                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">MARKETS</a>
-                    <a href="#contact"
-                        class="hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">CONTACT
+                    <a href="services.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">SERVICES</a>
+                    <a href="products.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">PRODUCTS</a>
+                    <a href="markets.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">MARKETS</a>
+                    <a href="contact.html"
+                        class="nav-link hover:text-vaks-lime transition-colors py-1 border-b-2 border-transparent hover:border-vaks-lime">CONTACT
                         US</a>
                 </nav>
 
@@ -169,12 +170,16 @@
         <!-- MOBILE MENU DRAWER -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-6 shadow-xl">
             <div class="flex flex-col gap-3 font-bold text-gray-700 text-sm">
-                <a href="#home" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">HOME</a>
-                <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">ABOUT US</a>
-                <a href="#services" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">SERVICES</a>
-                <a href="#products" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">PRODUCTS</a>
-                <a href="#markets" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">MARKETS</a>
-                <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">CONTACT US</a>
+                <a href="index.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">HOME</a>
+                <a href="about.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">ABOUT US</a>
+                <a href="services.html"
+                    class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">SERVICES</a>
+                <a href="products.html"
+                    class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">PRODUCTS</a>
+                <a href="markets.html"
+                    class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">MARKETS</a>
+                <a href="contact.html" class="nav-link mobile-nav-link py-2 px-3 rounded-lg hover:bg-vaks-bg">CONTACT
+                    US</a>
                 <button onclick="openQuoteModal()"
                     class="mt-2 w-full bg-vaks-dark text-white font-bold py-3 rounded-full text-center text-xs tracking-wider">
                     GET A QUOTE
@@ -185,11 +190,12 @@
 
     <!-- HERO SECTION (MATCHING REFERENCE MOCKUP EXACTLY) -->
     <section id="home" class="relative overflow-hidden bg-[#F9FAF7] min-h-[500px] lg:min-h-[600px] flex items-center">
-        <!-- FULL COVER BACKGROUND IMAGE (RIGHT SIDE) WITH DIAGONAL FADE -->
-        <div class="absolute inset-0 z-0 pointer-events-none">
-            <img src="fruits1.png" alt="VAKS Global Trade and Fresh Produce"
-                class="absolute inset-0 w-full h-full object-cover object-right [mask-image:linear-gradient(115deg,transparent_20%,black_50%)] [-webkit-mask-image:linear-gradient(115deg,transparent_20%,black_50%)]">
-        </div>
+        <!-- HTML5 CANVAS HERO IMAGE PLAYER -->
+        <canvas id="hero-canvas" class="absolute inset-y-0 right-0 w-full lg:w-3/5 h-full object-cover object-right z-0"></canvas>
+        
+        <!-- FOGGY GRADIENT OVERLAY PRESERVATION -->
+        <div class="bg-gradient-to-b from-white via-white/80 to-transparent h-36 absolute top-0 inset-x-0 z-10 pointer-events-none"></div>
+        <div class="bg-gradient-to-r from-[#F4F6F0] via-[#F4F6F0]/90 via-40% to-transparent absolute inset-0 z-10 pointer-events-none"></div>
 
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
             <div class="grid lg:grid-cols-12 gap-10 items-center">
@@ -210,7 +216,7 @@
 
                     <!-- EXPLORE OUR SERVICES PILL BUTTON -->
                     <div class="pt-2 flex justify-center lg:justify-start relative z-20">
-                        <a href="#services"
+                        <a href="services.html"
                             class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-sm shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all inline-flex items-center gap-3 group relative z-20">
                             <span>EXPLORE OUR SERVICES</span>
                             <i
@@ -311,7 +317,7 @@
                     </p>
 
                     <div class="pt-2">
-                        <a href="#contact"
+                        <a href="about.html"
                             class="border-2 border-vaks-dark text-vaks-dark hover:bg-vaks-dark hover:text-white font-bold px-7 py-3 rounded-full text-xs tracking-wider uppercase transition-all inline-flex items-center gap-2 group">
                             <span>READ MORE ABOUT US</span>
                             <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
@@ -809,11 +815,16 @@
                     <div>
                         <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-5">QUICK LINKS</h4>
                         <ul class="space-y-3 text-sm text-white font-medium">
-                            <li><a href="#home" class="hover:text-vaks-lime transition-colors">Home</a></li>
-                            <li><a href="#about" class="hover:text-vaks-lime transition-colors">About Us</a></li>
-                            <li><a href="#services" class="hover:text-vaks-lime transition-colors">Services</a></li>
-                            <li><a href="#products" class="hover:text-vaks-lime transition-colors">Products</a></li>
-                            <li><a href="#markets" class="hover:text-vaks-lime transition-colors">Markets</a></li>
+                            <li><a href="index.html" class="nav-link hover:text-vaks-lime transition-colors">Home</a>
+                            </li>
+                            <li><a href="about.html" class="nav-link hover:text-vaks-lime transition-colors">About
+                                    Us</a></li>
+                            <li><a href="services.html"
+                                    class="nav-link hover:text-vaks-lime transition-colors">Services</a></li>
+                            <li><a href="products.html"
+                                    class="nav-link hover:text-vaks-lime transition-colors">Products</a></li>
+                            <li><a href="markets.html"
+                                    class="nav-link hover:text-vaks-lime transition-colors">Markets</a></li>
                         </ul>
                     </div>
 
@@ -821,11 +832,16 @@
                     <div>
                         <h4 class="text-xs font-black uppercase tracking-wider text-vaks-lime mb-5">OUR SERVICES</h4>
                         <ul class="space-y-3 text-sm text-white font-medium">
-                            <li><a href="#services" class="hover:text-vaks-lime transition-colors">Sourcing</a></li>
-                            <li><a href="#services" class="hover:text-vaks-lime transition-colors">Packaging</a></li>
-                            <li><a href="#services" class="hover:text-vaks-lime transition-colors">Logistics</a></li>
-                            <li><a href="#services" class="hover:text-vaks-lime transition-colors">Exporting</a></li>
-                            <li><a href="#services" class="hover:text-vaks-lime transition-colors">Quality Control</a>
+                            <li><a href="services.html"
+                                    class="nav-link hover:text-vaks-lime transition-colors">Sourcing</a></li>
+                            <li><a href="services.html"
+                                    class="nav-link hover:text-vaks-lime transition-colors">Packaging</a></li>
+                            <li><a href="services.html"
+                                    class="nav-link hover:text-vaks-lime transition-colors">Logistics</a></li>
+                            <li><a href="services.html"
+                                    class="nav-link hover:text-vaks-lime transition-colors">Exporting</a></li>
+                            <li><a href="services.html" class="nav-link hover:text-vaks-lime transition-colors">Quality
+                                    Control</a>
                             </li>
                         </ul>
                     </div>
