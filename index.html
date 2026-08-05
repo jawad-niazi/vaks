@@ -155,10 +155,10 @@
 
     <!-- HERO SECTION (MATCHING REFERENCE MOCKUP EXACTLY) -->
     <section id="home" class="relative overflow-hidden bg-[#F9FAF7] min-h-[500px] lg:min-h-[600px] flex items-center">
-        <!-- FULL COVER BACKGROUND IMAGE (RIGHT SIDE) WITH DIAGONAL FADE -->
-        <div class="absolute inset-y-0 right-0 w-full lg:w-[85%] xl:w-[75%] z-0 pointer-events-none">
-            <img src="herosection.png" alt="VAKS Global Trade and Fresh Produce"
-                class="absolute inset-0 w-full h-full object-cover object-right [mask-image:linear-gradient(115deg,transparent_10%,black_45%)] [-webkit-mask-image:linear-gradient(115deg,transparent_10%,black_45%)]">
+        <!-- FULL COVER BACKGROUND IMAGE (NATIVE) -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img src="hero.jpeg" alt="VAKS Global Trade and Fresh Produce"
+                class="absolute inset-0 w-full h-full object-cover object-center">
         </div>
 
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
@@ -189,8 +189,8 @@
                     </div>
                 </div>
 
-                <!-- RIGHT SIDE EMPTY (Image is in absolute background) -->
-                <div class="lg:col-span-6 hidden lg:block h-[350px] sm:h-[450px] lg:h-[500px]">
+                <!-- RIGHT SIDE EMPTY SPACE -->
+                <div class="lg:col-span-6 hidden lg:block">
                 </div>
 
             </div>
@@ -198,7 +198,7 @@
     </section>
 
     <!-- MANDATORY USP BANNER GRID (DARK GREEN CARD WITH 4 USP COLUMNS) -->
-    <section class="py-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="relative z-30 -mt-16 lg:-mt-24 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-vaks-dark rounded-2xl p-6 sm:p-8 shadow-xl text-white">
             <div
                 class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-emerald-800/60">
@@ -537,46 +537,48 @@
     </section>
 
     <!-- STATS COUNTER BANNER (MATCHING REFERENCE MOCKUP) -->
-    <section class="py-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden bg-vaks-dark text-white rounded-2xl p-8 sm:p-12 shadow-xl">
-            <!-- Ambient Produce Overlay Image -->
-            <div class="absolute inset-0 opacity-20 bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80');">
-            </div>
+    <section class="relative overflow-hidden py-16 sm:py-20 my-12 w-full">
+        <!-- BACKGROUND IMAGE -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1920&q=80" 
+                alt="Fresh Produce Background" class="w-full h-full object-cover">
+        </div>
+        <!-- GREEN OVERLAY -->
+        <div class="absolute inset-0 bg-vaks-dark/80 z-10 pointer-events-none"></div>
 
-            <div
-                class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-emerald-800/60">
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-emerald-800/60">
 
                 <!-- Stat 1 -->
-                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="space-y-2 p-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
                         <span class="stat-counter" data-target="15">0</span>+
                     </div>
-                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Years of Experience</p>
+                    <p class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white">Years of Experience</p>
                 </div>
 
                 <!-- Stat 2 -->
-                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="200">
+                <div class="space-y-2 p-2" data-aos="zoom-in" data-aos-delay="200">
                     <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
                         <span class="stat-counter" data-target="50">0</span>+
                     </div>
-                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Countries Served</p>
+                    <p class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white">Countries Served</p>
                 </div>
 
                 <!-- Stat 3 -->
-                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="300">
+                <div class="space-y-2 p-2" data-aos="zoom-in" data-aos-delay="300">
                     <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
                         <span class="stat-counter" data-target="1000">0</span>+
                     </div>
-                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Successful Shipments</p>
+                    <p class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white">Successful Shipments</p>
                 </div>
 
                 <!-- Stat 4 -->
-                <div class="space-y-1 p-2" data-aos="zoom-in" data-aos-delay="400">
+                <div class="space-y-2 p-2" data-aos="zoom-in" data-aos-delay="400">
                     <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-vaks-lime tracking-tight">
                         <span class="stat-counter" data-target="500">0</span>+
                     </div>
-                    <p class="text-xs font-extrabold uppercase tracking-wider text-gray-300">Happy Clients</p>
+                    <p class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white">Happy Clients</p>
                 </div>
 
             </div>
@@ -691,21 +693,27 @@
         </div>
     </section>
 
-    <!-- BANNER CTA SECTION (MATCHING REFERENCE MOCKUP BOTTOM BANNER) -->
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-                class="bg-[#F4F6F0] rounded-3xl p-8 sm:p-12 md:p-16 grid lg:grid-cols-12 gap-8 items-center border border-gray-200/60 shadow-sm">
+    <!-- BANNER CTA SECTION (FULL WIDTH BANNER) -->
+    <section class="relative overflow-hidden bg-[#F4F6F0] py-16 lg:py-24 border-y border-gray-200/60 shadow-sm mt-12">
+        <!-- BACKGROUND IMAGE LAYER -->
+        <div class="absolute inset-y-0 right-0 w-full lg:w-[70%] z-0 pointer-events-none">
+            <img src="image3.jpeg" alt="VAKS Produce Spread"
+                class="absolute inset-0 w-full h-full object-cover object-left"
+                style="mask-image: linear-gradient(to right, transparent 0%, black 20%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
 
                 <!-- Left Content -->
-                <div class="lg:col-span-5 space-y-4" data-aos="fade-right">
-                    <h2 class="text-3xl sm:text-4xl font-black text-vaks-dark leading-tight">
+                <div class="lg:col-span-6 xl:col-span-5 space-y-4" data-aos="fade-right">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-vaks-dark leading-tight">
                         Bringing Freshness<br>From Our Farms<br>To Your Markets
                     </h2>
-                    <p class="text-xs sm:text-sm text-gray-600 font-medium">
+                    <p class="text-sm sm:text-base text-gray-800 font-semibold max-w-md pt-2">
                         Partner with us for reliable supply, premium quality, and long-term growth.
                     </p>
-                    <div class="pt-2">
+                    <div class="pt-4">
                         <button onclick="openQuoteModal()"
                             class="bg-vaks-dark hover:bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-full text-xs tracking-wider uppercase shadow-lg transition-all inline-flex items-center gap-2 group">
                             <span>GET IN TOUCH</span>
@@ -715,12 +723,8 @@
                     </div>
                 </div>
 
-                <!-- Right Produce Spread Graphic -->
-                <div class="lg:col-span-7 relative" data-aos="fade-left">
-                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white">
-                        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1200&q=80"
-                            alt="Fresh Harvest Produce Box Spread" class="w-full h-[240px] sm:h-[300px] object-cover">
-                    </div>
+                <!-- Right Side Spacer -->
+                <div class="lg:col-span-6 xl:col-span-7 hidden lg:block">
                 </div>
 
             </div>
