@@ -1,7 +1,7 @@
 /**
  * VAKS Global Trading Co. (VGTC) - Main Application Script
  * Features: Sticky Navbar, Mobile Menu Drawer, FAQ Accordion, Fun Facts Counter (IntersectionObserver),
- * Quote Modal Handler, Scrollspy, and AOS Init.
+ * Quote/Contact Modal Handler, WhatsApp & Phone Direct Integration, and AOS Init.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,14 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Sticky Navbar & Scroll Effects
     const mainHeader = document.getElementById('main-header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            mainHeader.classList.add('shadow-md', 'py-1');
-            mainHeader.classList.remove('py-0');
-        } else {
-            mainHeader.classList.remove('shadow-md', 'py-1');
-        }
-    });
+    if (mainHeader) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                mainHeader.classList.add('shadow-md', 'py-1');
+                mainHeader.classList.remove('py-0');
+            } else {
+                mainHeader.classList.remove('shadow-md', 'py-1');
+            }
+        });
+    }
 
     // 3. Mobile Hamburger Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -37,12 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
                 mobileMenu.classList.remove('hidden');
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
             } else {
                 mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
             }
         });
 
@@ -50,8 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
             });
         });
 
@@ -151,19 +159,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
 });
 
-// 7. Global Quote Modal Logic
-function openQuoteModal() {
+// 7. Direct Contact Modal Logic (No Form Fields)
+function openQuoteModal(productName) {
     const modal = document.getElementById('quote-modal');
-    const form = document.getElementById('quote-form');
-    const successMsg = document.getElementById('form-success');
     if (modal) {
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-        if (form) form.classList.remove('hidden');
-        if (successMsg) successMsg.classList.add('hidden');
+    }
+
+    const subtitle = document.getElementById('modal-product-subtitle');
+    const waUae = document.getElementById('modal-wa-uae');
+    const waPk = document.getElementById('modal-wa-pk');
+
+    if (productName) {
+        if (subtitle) subtitle.textContent = `Inquiring for: ${productName}`;
+        const msg = encodeURIComponent(`Hello VGTC! I would like to inquire about ${productName}.`);
+        if (waUae) waUae.href = `https://wa.me/971503908597?text=${msg}`;
+        if (waPk) waPk.href = `https://wa.me/923218988421?text=${msg}`;
+    } else {
+        if (subtitle) subtitle.textContent = `Connect directly with our export desk for pricing & specs.`;
+        const defaultMsg = encodeURIComponent(`Hello VGTC! I would like to request a B2B export quote.`);
+        if (waUae) waUae.href = `https://wa.me/971503908597?text=${defaultMsg}`;
+        if (waPk) waPk.href = `https://wa.me/923218988421?text=${defaultMsg}`;
     }
 }
 
@@ -176,31 +195,7 @@ function closeQuoteModal() {
 }
 
 function inquireProduct(productName) {
-    openQuoteModal();
-    const select = document.getElementById('modal-product');
-    if (select) {
-        select.value = productName;
-    }
-}
-
-function handleQuoteSubmit(e) {
-    e.preventDefault();
-    const form = document.getElementById('quote-form');
-    const successMsg = document.getElementById('form-success');
-
-    // Simulate submission delay for realistic feel
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
-
-    setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        form.reset();
-        form.classList.add('hidden');
-        successMsg.classList.remove('hidden');
-    }, 1000);
+    openQuoteModal(productName);
 }
 
 // Close modal on Escape key
